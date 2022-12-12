@@ -1,9 +1,11 @@
+import { createClient } from 'next-sanity';
 import Head from 'next/head'
 import Image from 'next/image'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
-
+import { sanityClient } from '../lib/sanity';
 import styles from '../styles/Home.module.css'
+const postQuery = `*[_type == "post"]`;
 
 export default function Home() {
   return (
@@ -32,4 +34,9 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+export async function getStaticProps() {
+  const posts = await sanityClient.fetch(`*[_type == "post"]`)
+  console.log(posts)
+  return { props: { posts }}
 }
