@@ -1121,6 +1121,11 @@
     "@typescript-eslint/types" "5.46.0"
     eslint-visitor-keys "^3.3.0"
 
+"@uploadcare/nextjs-loader@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@uploadcare/nextjs-loader/-/nextjs-loader-1.0.0.tgz#e30224480d76f602c03e4d0893a78025ae9f0457"
+  integrity sha512-zLTMW21VgRKenOfQ5uAWVMMjimnsaawXncqOwwedd/ysp3t9tmjVrAg6Mo5K8bk0rtoBTTrh0LKxLIaQj1xBUQ==
+
 "@vitejs/plugin-react@^2.0.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-react/-/plugin-react-2.2.0.tgz#1b9f63b8b6bc3f56258d20cd19b33f5cc761ce6e"
@@ -2762,6 +2767,17 @@ framer-motion@^7.5.3:
     framesync "6.1.2"
     hey-listen "^1.0.8"
     style-value-types "5.1.2"
+    tslib "2.4.0"
+  optionalDependencies:
+    "@emotion/is-prop-valid" "^0.8.2"
+
+framer-motion@^7.7.3:
+  version "7.7.3"
+  resolved "https://registry.yarnpkg.com/framer-motion/-/framer-motion-7.7.3.tgz#d6634577cc78db10fd5a55b71c3c3124e97376d3"
+  integrity sha512-O08sQUOnlvnUrsq/NU9zMB92oYkTXu8lodyTLBXggDvE5HwHs1ZVvcYKuCfvVAqfTmJXiHgYiANrqXfzpU4Plg==
+  dependencies:
+    "@motionone/dom" "10.13.1"
+    hey-listen "^1.0.8"
     tslib "2.4.0"
   optionalDependencies:
     "@emotion/is-prop-valid" "^0.8.2"
@@ -5267,6 +5283,13 @@ suspend-react@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/suspend-react/-/suspend-react-0.0.8.tgz#b0740c1386b4eb652f17affe4339915ee268bd31"
   integrity sha512-ZC3r8Hu1y0dIThzsGw0RLZplnX9yXwfItcvaIzJc2VQVi8TGyGDlu92syMB5ulybfvGLHAI5Ghzlk23UBPF8xg==
+
+swr@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/swr/-/swr-2.0.0.tgz#91d999359e2be92de1a41f6b6711d72be20ffdbd"
+  integrity sha512-IhUx5yPkX+Fut3h0SqZycnaNLXLXsb2ECFq0Y29cxnK7d8r7auY2JWNbCW3IX+EqXUg3rwNJFlhrw5Ye/b6k7w==
+  dependencies:
+    use-sync-external-store "^1.2.0"
 
 symbol-tree@^3.2.4:
   version "3.2.4"

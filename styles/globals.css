@@ -4,10 +4,26 @@
 
 body {
   background-color: rgb(29, 29, 29);
-  color: white;
+  color: rgb(227, 227, 227);
   font-weight: 100;
+  font-size: 1.5rem;
+  letter-spacing: 0.03rem;
+  font-family: Roboto, system-ui;
+  scroll-behavior: smooth;
+}
+h3 {
+  font-size: 1.2rem;
+}
+p {
+  font-size: 1rem;
 }
 a {
-  padding: 0.5rem;
-  font-size: 1.2rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 20rem;
+}
+a:hover {
+  color: #a752ed;
+  transition: 0.5s;
+  scale: 1.1;
 }
