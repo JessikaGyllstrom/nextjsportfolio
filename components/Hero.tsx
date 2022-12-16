@@ -41,7 +41,8 @@ function Hero({}: Props) {
             <div >       
         </div>
      
-            <div>
+            <div className='bg-purple-800 rounded-full filter blur-xl backdrop-grayscale backdrop-blur-2xl bg-opacity-30 p-12'>
+
                 <motion.img src={urlFor('image-d02153e43d283044b0158e611473bc0f1f605238-2500x2500-png').width(500).url() } 
                     animate={{ y: [0, 30, 0] }}
                     transition={{ ease: 'linear', duration: 10, repeat: Infinity }}

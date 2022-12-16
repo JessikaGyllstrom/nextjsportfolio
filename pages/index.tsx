@@ -36,9 +36,9 @@ function Skills({ posts }) {
     <div className='flex justify-center'>
     {posts.map((post, id) => 
     <div key={id} className='flex flex-col p-5'>
-      <h3 > { post.title }</h3>
+      <h3 className='font-normal' > { post.title }</h3>
       {post.description.map((post, id) => 
-        <h3>{post}</h3>
+        <p>{post}</p>
       )}
     </div>
     )} 

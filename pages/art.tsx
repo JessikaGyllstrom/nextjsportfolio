@@ -15,7 +15,7 @@ export default function Art( {art} ) {
 
 
   return (
-    <div>
+    <div><h1>art</h1>
            { art.map((painting) => (
         <img src={urlFor(painting.mainImage).url()}></img>
     
