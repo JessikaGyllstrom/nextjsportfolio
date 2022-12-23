@@ -1,10 +1,23 @@
 import Link from 'next/link'
 import { FormEvent } from 'react'
 import { uuid } from '@sanity/uuid'
+import React, { useState, useRef } from "react";
 
-export default function PageWithJSbasedForm() {
+export default function Contact() {
+  const initialValue = "";
+  const [message, setMessage] = useState(initialValue);
+  let [submitMessage, setsubmitMessage] = React.useState(initialValue);
+
+  const form = useRef(null);
+
+  const handleMessageChange = event => {
+    // 👇️ access textarea value
+    setMessage(event.target.value);
+    console.log(event.target.value);
+  };
   // Handle the submit event on form submit.
   const handleSubmit = async (event: FormEvent) => {
+ 
     // Stop the form from submitting and refreshing the page.
     event.preventDefault()
 
@@ -16,19 +29,21 @@ export default function PageWithJSbasedForm() {
       first: form.first.value as string,
       last: form.last.value as string,
       email: form.email.value as string,
-      message: form.message.value as string,
+      message: message,
     }
     const mutations = [{
       create: {
         firstName: `${data.first}`,
         lastName: `${data.last}`,
-        phone: `${data.email}`,
+        email: `${data.email}`,
         message: `${data.message}`,
         _id: `submission.${uuid()}`,
         _type: 'submission.form',
-        title: 'An article'
       }
     }]
+    setsubmitMessage("Message Sent!")
+    setMessage("")
+    form.reset();  
 
     // Send the form data to our API and get a response.
     const response = await fetch('/api/form', {
@@ -45,7 +60,6 @@ export default function PageWithJSbasedForm() {
     // Get the response data from server as JSON.
     // If server returns the name submitted, that means the form works.
     const result = await response.json()
-      alert(`Is this your full name: ${result.data}`)
     
     fetch(`https://5ivm84xc.api.sanity.io/v2021-10-21/data/mutate/production`, {
       method: 'post',
@@ -60,20 +74,22 @@ export default function PageWithJSbasedForm() {
       .catch(error => console.error(error)) 
   }
   return (
-    <div className="flex justify-center flex-col">
-      <h1>
-        GET IN TOUCH 
-      </h1>
-      <form onSubmit={handleSubmit} >
-        <label htmlFor="first" placeholder='First Name'></label>
-        <input className="p-2" type="text" id="first" name="first" required />
-        <label className="placeholder-gray-100" htmlFor="last" placeholder='Last Name'></label>
-        <input type="text" id="last" name="last" required />
-        <label htmlFor="email" placeholder='Email'></label>
-        <input type="email" id="email" name="email" required />
-        <textarea name="message" form="userform" placeholder='Enter message'></textarea>
-        <button type="submit">Submit</button>
-      </form>
+    <div className='formcontainer flex justify-center mb-5'>
+      <div className="flex w-[100%] sm:w-[90%] min-h-fit rounded-lg justify-end py-5 bg-no-repeat bg-[url('https://cdn.sanity.io/images/5ivm84xc/production/28e1b9a438e1d9f8e59ed9e15ba885b1dde955f2-1309x829.png')]">
+        <form ref={form} className='flex flex-col justify-center w-[97%] sm:w-[60%] md:w-[50%] pr-4'onSubmit={handleSubmit} >
+            <h3 className='pl-3 text-sm'>GET IN TOUCH!</h3>
+            <label htmlFor="first"></label>
+            <input className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2" type="text" id="first" name="first" required  placeholder='First Name'/>
+            <label htmlFor="last" ></label>
+            <input className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2" type="text" id="last" name="last" required placeholder='Last Name'/>
+            <label htmlFor="email"></label>
+            <input className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2" type="email" id="email" name="email" required placeholder='Email'/>
+            <label htmlFor="message"></label>
+            <textarea className="focus:ring-emerald-300/60 focus:ring-2 h-24 m-2 rounded-xl p-1 pl-2" id="message" name="message" form="form" placeholder='Enter message' value={message} onChange={handleMessageChange}
+            />
+          <div className='flex flex-row justify-end'><p className='m-2 p-1'>{submitMessage}</p><button className="bg-gradient-to-r from-pink-500 to-yellow-600 hover:from-blue-500 hover:to-green-500 m-2 rounded-full pr-2 pl-2 pt-1 pb-1" type="submit" onSubmit={handleSubmit}>Submit</button></div>
+        </form>
+      </div>
     </div>
   )
 }

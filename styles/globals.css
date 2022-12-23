@@ -2,31 +2,86 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: rgb(29, 29, 29);
-  color: rgb(227, 227, 227);
+* {
   font-weight: 100;
   font-size: 1.5rem;
   letter-spacing: 0.03rem;
   font-family: Roboto, system-ui;
   scroll-behavior: smooth;
+  color: white;
 }
-h3 {
-  font-size: 1.2rem;
+*::before,
+*::after { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+body {
+  background-color: rgb(23, 23, 23);
 }
 p {
   font-size: 1rem;
 }
-a {
-  padding: 1rem;
-  font-size: 1.5rem;
-  border-radius: 20rem;
-}
-a:hover {
-  color: #a752ed;
+.icon:hover {
+  color: #9a46df;
   transition: 0.5s;
   scale: 1.1;
 }
 input, textarea {
-  background-color: darkolivegreen;
+  background-color: rgba(0,0,0,.3);
+  font-size: 1rem;
+}
+::placeholder {
+  font-size: 1rem;
+  color: rgb(221, 221, 221);
+  font-weight: 200;
+}
+button {
+  font-size: 1rem;
+  color: rgb(42, 17, 65);
+  font-weight: 500;
+}
+textarea:focus, input:focus{
+ outline: none;
+}
+.formcontainer {
+  height: 65vh;
+  min-width: 100%;
+}
+
+/* Nav */
+nav a {
+  font-size: 1.2rem;
+}
+.hideMenuNav {
+  display: none;
+}
+.showMenuNav {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background: rgb(26, 26, 26);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+.link-underline-blue {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(121, 217, 239), rgb(66, 150, 156))
+}
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%
 }
