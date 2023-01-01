@@ -6,6 +6,13 @@ module.exports = {
     "./src/**/*.{html,js}",
   ],
   theme: {
+    screens: {
+      'tablet': ''
+
+    }
+
+  },
+  theme: {
     extend: {
       animation: {
         pulse: 'pulse 10s ease-in-out infinite',

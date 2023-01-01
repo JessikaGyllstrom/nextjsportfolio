@@ -8,7 +8,7 @@
   letter-spacing: 0.03rem;
   font-family: Roboto, system-ui;
   scroll-behavior: smooth;
-  color: white;
+  color: rgb(228, 227, 227);
 }
 *::before,
 *::after { 
@@ -17,10 +17,10 @@
     box-sizing: border-box; 
 }
 body {
-  background-color: rgb(23, 23, 23);
+  background-color: #141a1c;
 }
 p {
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 .icon:hover {
   color: #9a46df;
@@ -32,7 +32,6 @@ input, textarea {
   font-size: 1rem;
 }
 ::placeholder {
-  font-size: 1rem;
   color: rgb(221, 221, 221);
   font-weight: 200;
 }
@@ -84,4 +83,8 @@ nav a {
 .link-underline:hover {
   background-size: 100% 3px;
   background-position: 0 100%
+}
+/* Form submit-button */
+.hideBtn {
+  display: none;
 }

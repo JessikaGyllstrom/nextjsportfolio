@@ -23,7 +23,7 @@ function Hero({}: Props) {
     })
     return (
             <div className='flex justify-center min-h-screen'>
-                <div className='flex p-5 w-[90%] sm:w-[80%] md:w-[70%%] md:h-80 lg:w-[60%] lg:px-10 flex-col md:flex-row justify-center items-center bg-neutral-800 mt-10 rounded-lg md:p-5 shadow-purple-800 shadow-[0_0_60px_0]'>
+                <div className='flex p-5 w-[90%] sm:w-[80%] md:w-[70%%] md:h-80 lg:w-[70%] lg:px-7 md:flex-row justify-center items-center bg-gray-800 bg-opacity-10 mt-10 rounded-lg md:p-5 shadow-purple-800 shadow-[0_0_60px_0] hover:scale-[1.01] transition ease-in-out delay-250'>
                     <div className='flex flex-col w-[98%] min-h-[35%] md:w-[100%] justify-around md:p-2 md:pt-8'>
                         <div className='justify-center flex-initial'>
                             <h3 className='bg-purple-800/40 pl-2 p-2 mb-2 rounded-r-md w-[80%] md:w-[80%]  text-xs md:text-sm'>Welcome to my portfolio</h3>
