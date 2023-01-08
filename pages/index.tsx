@@ -13,7 +13,7 @@ function Home( {skills} ) {
       <Hero />
 
       <div style={{ height: "150px", width: "150px" }}>
-  <Icon file={github} color={'#1c1c1c'} scale={10}/>
+  <Icon file={github} color={'#FFF'} lightColor={'#ff1965'} scale={10} spin={true} depth={15} className={'shadow-xl shadow-purple-600'} />
 </div>
       <Skills skills={skills} />
       <Contact />
