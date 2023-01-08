@@ -2,6 +2,7 @@ import React from 'react'
 import { urlFor, sanityClient } from '../lib/sanity'
 import { useState } from "react"; // import state
 import Link  from 'next/link'
+
 type Props = {}
 
 function Header({}: Props) {

@@ -11,10 +11,6 @@ function Home( {skills} ) {
   return (
     <div> 
       <Hero />
-
-      <div style={{ height: "150px", width: "150px" }}>
-  <Icon file={github} color={'#FFF'} lightColor={'#ff1965'} scale={10} spin={true} depth={15} className={'shadow-xl shadow-purple-600'} />
-</div>
       <Skills skills={skills} />
       <Contact />
     </div>

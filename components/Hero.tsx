@@ -6,6 +6,9 @@ import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 import { AiOutlineMail } from 'react-icons/ai'
 
 
+import { Icon } from "react-3d-icons";
+import { github } from "react-3d-icons";
+
 
 type Props = {}
 
@@ -32,6 +35,9 @@ function Hero({}: Props) {
                         <div className='flex flex-col'>
                             <div className='social flex flex-row justify-center pt-1 mt-3'>
                                 <a><BsGithub size={25} className='icon mx-2'></BsGithub></a>
+
+  <Icon file={github} color={'#FFF'} lightColor={'#FFF'} scale={6} spin={true} depth={10} className={''} />
+
                                 <a><BsLinkedin size={25} className='icon mx-2'></BsLinkedin></a>
                                 <a><BsInstagram size={25} className='icon mx-2'></BsInstagram></a>
                                 <a ><AiOutlineMail size={25}></AiOutlineMail></a>
