@@ -27,25 +27,27 @@ p {
   transition: 0.5s;
   scale: 1.1;
 }
-input, textarea {
-  background-color: rgba(0,0,0,.3);
-  font-size: 1rem;
-}
-::placeholder {
-  color: rgb(221, 221, 221);
-  font-weight: 200;
-}
 button {
   font-size: 1rem;
   color: rgb(42, 17, 65);
   font-weight: 500;
 }
-textarea:focus, input:focus{
+/* form */
+.contact textarea:focus, input:focus{
+  border: none;
  outline: none;
 }
 .formcontainer {
   height: 65vh;
   min-width: 100%;
+}
+.contact input, textarea {
+  background-color: rgba(0,0,0,.4);
+  font-size: 1rem;
+}
+::placeholder {
+  color: rgb(221, 221, 221);
+  font-weight: 200;
 }
 
 /* Nav */
@@ -83,8 +85,4 @@ nav a {
 .link-underline:hover {
   background-size: 100% 3px;
   background-position: 0 100%
-}
-/* Form submit-button */
-.hideBtn {
-  display: none;
 }

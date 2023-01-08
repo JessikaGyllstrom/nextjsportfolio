@@ -6,6 +6,10 @@ type Props = {}
 
 function Header({}: Props) {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
+  const handleClick = (e, path) => {
+    console.log("I clicked on the art Page");
+    setIsNavOpen(false)
+  }
   return (
     <header className='top-0 flex justify-between items-center max-w-5xl mx-auto pt-2 p-2 px-3 overflow-hidden'>
         <div className='flex flex-row'>
@@ -42,19 +46,19 @@ function Header({}: Props) {
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[200px]">
               <li className="my-4 uppercase text-xs">
-                <Link href="/"><span className='link link-underline link-underline-blue pb-1 text-xs'>Home</span></Link>
+                <Link href="/" onClick={(e) => handleClick(e, "/")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Home</span></Link>
               </li>
               <li className="my-4 uppercase text-xs">
-                <a href="/about"><span className='link link-underline link-underline-blue pb-1 text-xs'>About</span></a>
+                <a href="/about" onClick={(e) => handleClick(e, "/about")}><span className='link link-underline link-underline-blue pb-1 text-xs'>About</span></a>
               </li>
               <li className="my-4 uppercase text-xs">
-                <a href="/webdev"><span className='link link-underline link-underline-blue pb-1 text-xs'>Webbdev</span></a>
+                <Link href="/webbdev" onClick={(e) => handleClick(e, "/webbdev")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Webbdev</span></Link>
               </li>
               <li className="my-4 uppercase text-xs">
-                <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-xs'>Art</span></Link>
+                <Link href="/art" onClick={(e) => handleClick(e, "/art")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Art</span></Link>
               </li>
               <li className="my-4 uppercase text-xs">
-                <a href="/contact"><span className='link link-underline link-underline-blue pb-1 text-xs'>Contact</span></a>
+                <Link href="/contact" onClick={(e) => handleClick(e, "/contact")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Contact</span></Link>
               </li>
             </ul>
           </div>
@@ -68,7 +72,7 @@ function Header({}: Props) {
             <a href="/about"><span className='link link-underline link-underline-blue pb-1 text-sm'>About</span></a>
           </li>
           <li>
-            <a href="/webdev"><span className='link link-underline link-underline-blue pb-1 text-sm'>Webbdev</span></a>
+            <Link href="/webbdev"><span className='link link-underline link-underline-blue pb-1 text-sm'>Webbdev</span></Link>
           </li>
           <li>
             <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-sm'>Art</span></Link>

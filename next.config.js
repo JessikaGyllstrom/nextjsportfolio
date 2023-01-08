@@ -1,20 +1,32 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 }
+
 module.exports = {
-	images: {
-		domains: ['cdn.sanity.io', 'cdn.sanity.io/images/5ivm84xc/production/'],
-		loader: 'custom',
-		remotePatterns: [
-			{
-			  protocol: 'https',
-			  hostname: 'cdn.sanity.io',
-			  port: '',
-			  pathname: '/5ivm84xc/**',
-			},
-		  ],
+	rules: [
+	{	
+		test: /\.(s[ac]ss|css)$/i,
+		use: ['style-loader', 'css-loader']
 	}
-};
+	]
+  }
+  module.exports = {
+	images: {
+
+	  remotePatterns: [
+		{
+		
+		  hostname: ['https://cdn.sanity.io', 'cdn.sanity.io/', '**.example.com', 'example.com',
+		  
+		],
+		pathname: '**/images/5ivm84xc/**', 
+		protocol: '',
+
+		},
+	  ],
+	},
+  }
 module.exports = nextConfig

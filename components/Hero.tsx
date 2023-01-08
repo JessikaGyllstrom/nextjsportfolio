@@ -4,7 +4,6 @@ import { urlFor, sanityClient } from '../lib/sanity'
 import { motion } from "framer-motion"
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 import { AiOutlineMail } from 'react-icons/ai'
-import { IconContext } from "react-icons";
 
 
 
@@ -22,20 +21,20 @@ function Hero({}: Props) {
         typeSpeed: 80
     })
     return (
-            <div className='flex justify-center min-h-screen'>
-                <div className='flex p-5 w-[90%] sm:w-[80%] md:w-[70%%] md:h-80 lg:w-[70%] lg:px-7 md:flex-row justify-center items-center bg-gray-800 bg-opacity-10 mt-10 rounded-lg md:p-5 shadow-purple-800 shadow-[0_0_60px_0] hover:scale-[1.01] transition ease-in-out delay-250'>
-                    <div className='flex flex-col w-[98%] min-h-[35%] md:w-[100%] justify-around md:p-2 md:pt-8'>
+            <div className='flex justify-center items-center h-vh'>
+                <div className='flex flex-col p-5 w-[80%] sm:w-[80%] md:w-[70%%] md:h-80 lg:w-[70%] lg:px-7 md:flex-row justify-center items-center bg-gray-800 bg-opacity-10 mt-10 rounded-lg md:p-5 shadow-purple-800 shadow-[0_0_60px_0] hover:scale-[1.01] transition ease-in-out delay-250'>
+                    <div className='flex flex-col w-[98%] min-h-[35%] pt-4 md:w-[100%] justify-around md:p-2 md:pt-8'>
                         <div className='justify-center flex-initial'>
                             <h3 className='bg-purple-800/40 pl-2 p-2 mb-2 rounded-r-md w-[80%] md:w-[80%]  text-xs md:text-sm'>Welcome to my portfolio</h3>
                         </div>
-                        <h2 className='font-bold text-xs md:text-sm lg:text-md'>I'M JESSIKA GYLLSTRÖM</h2>
-                        <h5 className='text-xs md:text-sm'>- {text}</h5>
+                        <h2 className='font-bold pt-3 text-xs md:text-sm lg:text-md'>IM JESSIKA GYLLSTRÖM</h2>
+                        <h5 className='text-xs md:text-sm min-h-[50px]'>- {text}</h5>
                         <div className='flex flex-col'>
                             <div className='social flex flex-row justify-center pt-1 mt-3'>
                                 <a><BsGithub size={25} className='icon mx-2'></BsGithub></a>
                                 <a><BsLinkedin size={25} className='icon mx-2'></BsLinkedin></a>
                                 <a><BsInstagram size={25} className='icon mx-2'></BsInstagram></a>
-                                <a><AiOutlineMail size={25} className='icon mx-2'></AiOutlineMail></a>
+                                <a ><AiOutlineMail size={25}></AiOutlineMail></a>
                             </div>
                         </div> 
                     </div>

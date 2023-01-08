@@ -61,12 +61,12 @@ export default function Contact() {
       });
   };
   return (
-    <div id='contact'>
+    <div className='contact mb-8' id="contact">
        <fieldset className="border-t border-gray-700 mb-10">
         <legend className="mx-auto px-4 text-white text-lg italic">Contact</legend>
       </fieldset>
-      <div className='formcontainer flex justify-center mb-5'>
-        <div className="flex w-[100%] sm:w-[90%] md:w-[70%] min-h-fit rounded-lg justify-end py-5 bg-no-repeat bg-[url('https://cdn.sanity.io/images/5ivm84xc/production/28e1b9a438e1d9f8e59ed9e15ba885b1dde955f2-1309x829.png')]  shadow-purple-800 shadow-[0_0_10px_0] hover:scale-[1.02] transition ease-in-out delay-850">      
+      <div className='formcontainer flex justify-center mb-5 min-h-fit'>
+        <div className="flex w-[100%] sm:w-[90%] md:w-[70%] rounded-lg justify-end py-5 bg-no-repeat bg-[url('https://cdn.sanity.io/images/5ivm84xc/production/28e1b9a438e1d9f8e59ed9e15ba885b1dde955f2-1309x829.png')]  shadow-purple-800 shadow-[0_0_10px_0] hover:scale-[1.02] transition ease-in-out delay-850">      
         <form  className='flex flex-col justify-center w-[97%] sm:w-[60%] md:w-[50%] pr-4' onSubmit={handleOnSubmit}>
           <h3 className='pl-3 text-sm'>GET IN TOUCH!</h3>
           <input
@@ -90,7 +90,7 @@ export default function Contact() {
             placeholder='Last Name'
           />
           <input
-            className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2 text-xs"
+            className="autofill:!bg-slate-400 focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2 text-xs"
             id="email"
             type="email"
             name="_replyto"
