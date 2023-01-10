@@ -1,11 +1,7 @@
 import Contact from './js-form';
 import Hero from '../components/Hero'
-import { sanityClient, urlFor } from '../lib/sanity';
-import imageUrlBuilder from '@sanity/image-url'
+import { urlFor } from '../lib/sanity';
 import { loadData } from '../lib/loadData';
-const builder = imageUrlBuilder(sanityClient)
-import { Icon } from "react-3d-icons";
-import { github } from "react-3d-icons";
 
 function Home( {skills} ) {
   return (
