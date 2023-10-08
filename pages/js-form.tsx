@@ -66,11 +66,11 @@ export default function Contact() {
         <legend className="mx-auto px-4 text-white text-lg italic">Contact</legend>
       </fieldset>
       <div className='formcontainer flex justify-center mb-5 min-h-fit'>
-        <div className="flex w-[100%] sm:w-[90%] md:w-[70%] rounded-lg justify-end py-5 bg-no-repeat bg-[url('https://cdn.sanity.io/images/5ivm84xc/production/28e1b9a438e1d9f8e59ed9e15ba885b1dde955f2-1309x829.png')]  shadow-purple-800 shadow-[0_0_10px_0] hover:scale-[1.02] transition ease-in-out delay-850">      
+        <div className="flex w-[100%] sm:w-[90%] md:w-[70%] rounded-lg justify-end py-5]  shadow-purple-800 shadow-[0_0_10px_0] hover:scale-[1.02] transition ease-in-out delay-850">      
         <form  className='flex flex-col justify-center w-[97%] sm:w-[60%] md:w-[50%] pr-4' onSubmit={handleOnSubmit}>
           <h3 className='pl-3 text-sm'>GET IN TOUCH!</h3>
           <input
-            className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2 text-xs"
+            className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-sm pl-2"
             id="firstname"
             type="text"
             name="firstname"
@@ -80,7 +80,7 @@ export default function Contact() {
             placeholder='First Name'
           />
           <input
-            className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2 text-xs"
+            className="focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-sm pl-2"
             id="lastname"
             type="text"
             name="lastname"
@@ -90,7 +90,7 @@ export default function Contact() {
             placeholder='Last Name'
           />
           <input
-            className="autofill:!bg-slate-400 focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-xl p-1 pl-2 text-xs"
+            className="autofill:!bg-slate-400 focus:ring-emerald-300/60 focus:ring-2 m-2 rounded-sm p-1 pl-2 "
             id="email"
             type="email"
             name="_replyto"
@@ -112,7 +112,7 @@ export default function Contact() {
           <div className="error">Error: {status.info.msg}</div>
         )}
         {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
-            <button className="text-xs bg-gradient-to-r from-pink-500 to-yellow-600 hover:from-blue-500 hover:to-green-500 m-2 rounded-full pr-2 pl-2 pt-1 pb-1" type="submit" disabled={status.submitting}>
+            <button className="m-2 rounded-full pr-2 pl-2 pt-1 pb-1" type="submit" disabled={status.submitting}>
               {!status.submitting
                 ? !status.submitted
                   ? 'Submit'

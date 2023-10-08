@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+
+html {
   font-weight: 100;
   font-size: 1.5rem;
   letter-spacing: 0.03rem;
-  font-family: Roboto, system-ui;
   scroll-behavior: smooth;
-  color: rgb(238, 235, 235);
 }
 *::before,
 *::after { 
@@ -17,21 +16,24 @@
     box-sizing: border-box; 
 }
 body {
-  background-color: #141a1c;
+  background-color: #0f141b;
+  color: #fff;
 }
+button {
+  font-size: 0.8rem;
+}
+h3 {
+  font-size: 1.2rem;
+}
+
 p {
   font-size: 0.7rem;
 }
-.icon:hover {
-  color: #9a46df;
-  transition: 0.5s;
-  scale: 1.1;
+section {
+  min-height: 90vh;
 }
-button {
-  font-size: 1rem;
-  color: rgb(42, 17, 65);
-  font-weight: 500;
-}
+
+
 /* form */
 .contact textarea:focus, input:focus{
   border: none;
@@ -85,4 +87,32 @@ nav a {
 .link-underline:hover {
   background-size: 100% 3px;
   background-position: 0 100%
+}
+::placeholder {
+  font-size: 0.7rem
+}
+.bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  font-family: monospace;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.29);
+  z-index: -1;
+  pointer-events: none;
+}
+.arrow {
+  font-size: 1.3rem;
+}
+.icon:hover {
+  color: rgb(159, 70, 159);
+  scale: 1.1;
+  transition: ease-in-out;
+}
+
+@layer base {
+  h2 {
+    @apply text-3xl;
+  }
 }

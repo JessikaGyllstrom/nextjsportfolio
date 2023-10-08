@@ -2,22 +2,28 @@ import React from 'react'
 import { urlFor, sanityClient } from '../lib/sanity'
 import { useState } from "react"; // import state
 import Link  from 'next/link'
+import { PageInfo } from '../pages/typings.d';
 
-type Props = {}
-
-function Header({}: Props) {
+type Props = {
+  pageInfo: PageInfo[];
+}
+export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   const handleClick = (e, path) => {
-    console.log("I clicked on the art Page");
+    console.log("I clicked on menu");
     setIsNavOpen(false)
   }
   return (
     <header className='top-0 flex justify-between items-center max-w-5xl mx-auto pt-2 p-2 px-3 overflow-hidden'>
-        <div className='flex flex-row'>
-          <Link href="/"><img src={urlFor('image-cbece69870934dd72adc277bb66ceab37a217635-100x100-png').width(40).url() } ></img></Link>
-        </div>
+      <div className='flex flex-row'>
+        {/* {pageInfo.map((info, id) => 
+          <Link href="/"><img src={urlFor(info.logoImage.asset._ref).width(40).url() } ></img></Link>
+        )} */}
+        <Link href="/"><img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png" width={50}></img></Link>
+
+          </div>
         <nav>
-        <section className="MOBILE-MENU flex lg:hidden">
+        <div className="MOBILE-MENU flex lg:hidden">
           <div
             className="HAMBURGER-ICON space-y-1"
             onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
@@ -49,41 +55,49 @@ function Header({}: Props) {
               <li className="my-4 uppercase text-xs">
                 <Link href="/" onClick={(e) => handleClick(e, "/")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Home</span></Link>
               </li>
-              <li className="my-4 uppercase text-xs">
+              {/* <li className="my-4 uppercase text-xs">
                 <a href="/about" onClick={(e) => handleClick(e, "/about")}><span className='link link-underline link-underline-blue pb-1 text-xs'>About</span></a>
-              </li>
-              <li className="my-4 uppercase text-xs">
+              </li> */}
+              {/* <li className="my-4 uppercase text-xs">
                 <Link href="/webbdev" onClick={(e) => handleClick(e, "/webbdev")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Webbdev</span></Link>
-              </li>
-              <li className="my-4 uppercase text-xs">
+              </li> */}
+              {/* <li className="my-4 uppercase text-xs">
                 <Link href="/art" onClick={(e) => handleClick(e, "/art")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Art</span></Link>
-              </li>
+              </li> */}
               <li className="my-4 uppercase text-xs">
                 <Link href="/contact" onClick={(e) => handleClick(e, "/contact")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Contact</span></Link>
               </li>
             </ul>
           </div>
-        </section>
+        </div>
 
         <ul className="DESKTOP-MENU hidden space-x-4 lg:flex">
           <li>
             <Link href="/"><span className='link link-underline link-underline-blue pb-1 text-sm'>Home</span></Link>
           </li>
           <li>
-            <a href="/about"><span className='link link-underline link-underline-blue pb-1 text-sm'>About</span></a>
-          </li>
-          <li>
-            <Link href="/webbdev"><span className='link link-underline link-underline-blue pb-1 text-sm'>Webbdev</span></Link>
-          </li>
-          <li>
             <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-sm'>Art</span></Link>
           </li>
           <li>
+            <a href="/#education"><span className='link link-underline link-underline-blue pb-1 text-sm'>Education</span></a>
+          </li> 
+          <li>
+            <a href="/#skills"><span className='link link-underline link-underline-blue pb-1 text-sm'>Skills</span></a>
+          </li> 
+          {/* <li>
+            <a href="/about"><span className='link link-underline link-underline-blue pb-1 text-sm'>About</span></a>
+          </li> */}
+          {/* <li>
+            <Link href="/webbdev"><span className='link link-underline link-underline-blue pb-1 text-sm'>Webbdev</span></Link>
+          </li> */}
+          {/* <li>
+            <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-sm'>Art</span></Link>
+          </li> */}
+          {/* <li>
             <Link href="/#contact"><span className='link link-underline link-underline-blue pb-1 text-sm'>Contact</span></Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>
   )
 }
-export default Header

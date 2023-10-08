@@ -15,10 +15,10 @@ export default function Layout({ children }) {
             <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
             <meta name="msapplication-TileColor" content="#da532c"/>
             <meta name="theme-color" content="#101010" />
-        </Head> 
-        <Header />
-        <main>{children}</main>
-        <Footer />
+      </Head>
+      <Header />
+      <main>{children}</main>
+      <Footer />
     </>
   )
 }

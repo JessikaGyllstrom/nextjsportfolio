@@ -13,6 +13,7 @@ module.exports = {
 
   },
   theme: {
+
     extend: {
       animation: {
         pulse: 'pulse 10s ease-in-out infinite',
@@ -23,6 +24,21 @@ module.exports = {
           '50%': {opacity: .3 }
         }        
       }
+    },
+    extend: {
+      keyframes: {
+        animatedgradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
+        },
+      },
+      backgroundSize: {
+        '300%': '300%',
+      },
+      animation: {
+        gradient: 'animatedgradient 6s ease infinite alternate',
+      },
     },
   },
   plugins: [],

@@ -1,44 +1,96 @@
-import Contact from './js-form';
 import Hero from '../components/Hero'
-import { urlFor } from '../lib/sanity';
-import { loadData } from '../lib/loadData';
+import {AnimateComponent} from '../components/AnimateComponent';
+import { GetStaticProps } from 'next';
+import Footer from '../components/Footer';
+import { Skill } from './typings.d';
+import { PageInfo } from './typings.d';
 
-function Home( {skills} ) {
-  return (
-    <div> 
-      <Hero />
-      <Skills skills={skills} />
-      <Contact />
-    </div>
-  )
+import { fetchSkills } from '../utils/fetchSkills';
+import { fetchPageInfo } from '../utils/fetchPageInfo';
+import { fetchEducations } from '../utils/fetchEducations';
+import { fetchCourses } from '../utils/fetchCourses';
+
+import  Header from '../components/Header';
+import Skills from '../components/Skills';
+import { Education } from './typings.d';
+import Educations from '../components/Education';
+import EdImg from '../components/EdImg';
+import Fieldset from '../components/Fieldset';
+import { XaxisAnimate } from '../components/Xanimate';
+import { Course } from '../components/Course';
+import { Courses } from './typings.d';
+import { count } from 'console';
+
+type Props = {
+  skills: Skill[];
+  pageInfo: PageInfo[];
+  education: Education[];
+  courses: Courses[];
 }
-function Skills({ skills }) {
+
+const Home = ({ skills, education, pageInfo, courses }: Props) => {
+  console.log(education)
   return (
-      <div className='py-10'>
-        <fieldset className="border-t border-gray-700 mb-10">
-          <legend className="mx-auto px-4 text-white text-lg italic">Skills</legend>
-        </fieldset>
-        <div className='flex justify-center mx-auto h-[80%]  md:mx-5'>
-          <div className='flex items-center flex-col md:flex-row md:w-[70%]'>
-            {skills.map((skill, id) => 
-              <div key={id} className='flex flex-col m-3 w-[60%] sm:w-[40%] md:w-[70] lg:w-[60%] rounded-xl bg-gray-800 bg-opacity-60  shadow-purple-800 shadow-[0_0_10px_0] hover:scale-[1.02] transition ease-in-out delay-850'>
-                <img className="cover rounded-t-xl" src={urlFor(`${skill.image.asset._ref}`).url()}/>
-                <div className='py-2 px-3'>
-                  <h3 className='text-xs font-bold' > { skill.title }</h3>
-                    {skill.description.map((skill, id) => 
-                      <p key={id} className=''>{skill}</p>
-                    )}
-                </div>    
-              </div>
-            )} 
+    <div className='min-h-[100vh] content-center'>
+        <AnimateComponent>
+          <div className='flex h-screen'>
+              <Hero pageInfo={pageInfo} />
           </div>
+        </AnimateComponent>
+
+      <AnimateComponent>
+              <div className='w-screen justify-center m-8 p-8'>
+
+          <Skills skills={skills} />
+          </div>
+          </AnimateComponent>
+
+      <AnimateComponent>
+        {/* education section */}
+        <div className='flex w-screen h-screen sitems-center m-8 p-8'>
+          <div>
+        <Fieldset sectionTitle={"Education"} />
+            <div className="flex justify-center items-center h-full">
+              <div className='flex w-[90%]'>
+            
+              <div className='w-[50%] mr-2'>
+                <EdImg pageInfo={pageInfo} />
+              </div>
+              <div className='flex flex-col items-center justify-center w-[50%] ml-2'>
+
+              <Educations education={education} />
+              <Course courses={ courses } />
+            </div>
+            </div>
+            </div>
+            </div>
+
         </div>
-    </div>
+                </AnimateComponent>
+</div>
+
+
   )
 }
+
 export default Home;
 
-export async function getStaticProps() {
-  const skills = await loadData(`*[_type == 'skills']`)
-  return { props: {  skills }}
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const skills: Skill[] = await fetchSkills()
+  const pageInfo: PageInfo[] = await fetchPageInfo()
+  const education: Education[] = await fetchEducations()
+  const courses: Courses[] = await fetchCourses()
+  // const art: Art[] = await fetchArt()
+
+
+  console.log("fetching from indexpage")
+  return {
+    props: {
+      skills, 
+      pageInfo,
+      education, 
+      courses
+    },
+    revalidate: 10,
+  } 
 }
