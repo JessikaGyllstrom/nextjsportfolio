@@ -1,24 +1,71 @@
 import Header from './Header'
 import Footer from './Footer'
 import Head from 'next/head'
+import { fetchPageInfo } from '../utils/fetchPageInfo'
+import { useEffect, useState } from 'react'
+import { Inter, Pattaya, Roboto_Mono, Rampart_One, Berkshire_Swash } from 'next/font/google';
+
+const pattaya = Pattaya({ 
+  subsets: ['latin'],
+  weight:["400"],
+  variable: '--font-pattaya',
+});
+ const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+})
+ 
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+})
+const rampart = Rampart_One({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-rampart',
+  weight: '400'
+})
+const swash = Berkshire_Swash({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-rampart',
+  weight: '400'
+})
 
 export default function Layout({ children }) {
+  
+  const [isLoading, setLoading] = useState(true)
+  const [data, setData] = useState<any[]>([])
+
+  useEffect(() => {
+    fetchPageInfo()
+    .then(values => {
+      setData(values);
+      setLoading(false)
+    })
+  }, [])
+
+  if (isLoading) return <p>Loading...</p>
+  if (!data) return <p>No data</p>
+  
   return (
     <>
-        <Head>
-            <title>Jessika Gyllström Portfolio</title>
-            <meta name="description" content="jessika gyllström portfolio" />                 
-            <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
-            <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
-            <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-            <link rel="manifest" href="/site.webmanifest"/>
-            <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-            <meta name="msapplication-TileColor" content="#da532c"/>
-            <meta name="theme-color" content="#101010" />
+      <Head>
+        <title>Jessika Gyllström Portfolio</title>
+        <meta name="description" content="jessika gyllström portfolio" />                 
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c"/>
+        <meta name="theme-color" content="#101010" />
       </Head>
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <Header />  
+      <main className={`${inter.variable} ${pattaya.variable}`}>{children}</main>
+      <Footer pageInfo={data} />
     </>
   )
 }

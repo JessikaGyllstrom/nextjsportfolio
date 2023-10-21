@@ -33,6 +33,7 @@ export interface PageInfo extends SanityBody {
     githubLink: string;
     linkedinLink: string;
     email: string;
+    links: string[];
     logoImage: {
         asset: {
             _id: any;
@@ -90,6 +91,27 @@ export interface Art extends SanityBody {
         asset: {
             _id: any;
             _ref: string;
+            _type: "reference"
+        }
+    }
+}
+export interface Webbdev extends SanityBody {
+    _type: "webbdev";
+    title: string;
+    description: string[];
+    ref: string;
+    image: {
+        asset: {
+            _id: any;
+            _ref: string;
+            _type: "reference"
+        }
+    }
+    video: {
+        asset: {
+            _id: any;
+            _ref: string;
+            _url: string;
             _type: "reference"
         }
     }

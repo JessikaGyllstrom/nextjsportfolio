@@ -9,56 +9,43 @@ html {
   letter-spacing: 0.03rem;
   scroll-behavior: smooth;
 }
+
 *::before,
-*::after { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-  background-color: #0f141b;
   color: #fff;
+  background-image: radial-gradient(circle, #1d1d2d 0%, #131316 100%);
 }
+
 button {
   font-size: 0.8rem;
 }
-h3 {
-  font-size: 1.2rem;
-}
+
+
 
 p {
   font-size: 0.7rem;
 }
+
 section {
   min-height: 90vh;
 }
 
 
-/* form */
-.contact textarea:focus, input:focus{
-  border: none;
- outline: none;
-}
-.formcontainer {
-  height: 65vh;
-  min-width: 100%;
-}
-.contact input, textarea {
-  background-color: rgba(0,0,0,.4);
-  font-size: 1rem;
-}
-::placeholder {
-  color: rgb(221, 221, 221);
-  font-weight: 200;
-}
-
 /* Nav */
 nav a {
   font-size: 1.2rem;
 }
+
 .hideMenuNav {
   display: none;
 }
+
 .showMenuNav {
   display: block;
   position: absolute;
@@ -73,6 +60,7 @@ nav a {
   justify-content: space-evenly;
   align-items: center;
 }
+
 .link-underline {
   border-bottom-width: 0;
   background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
@@ -81,16 +69,20 @@ nav a {
   background-repeat: no-repeat;
   transition: background-size .5s ease-in-out;
 }
+
 .link-underline-blue {
-  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(121, 217, 239), rgb(66, 150, 156))
+  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(90, 205, 183), rgb(122, 225, 196))
 }
+
 .link-underline:hover {
   background-size: 100% 3px;
   background-position: 0 100%
 }
+
 ::placeholder {
   font-size: 0.7rem
 }
+
 .bg-img {
   position: absolute;
   top: 0;
@@ -102,17 +94,22 @@ nav a {
   z-index: -1;
   pointer-events: none;
 }
+
 .arrow {
   font-size: 1.3rem;
 }
+
 .icon:hover {
   color: rgb(159, 70, 159);
   scale: 1.1;
   transition: ease-in-out;
 }
-
-@layer base {
-  h2 {
-    @apply text-3xl;
-  }
+.card {
+  @apply bg-gray-800/30 border-[0.1px] border-slate-600 rounded-sm;
+}
+.smooth-hover {
+  @apply transition duration-150 hover:ease-in-out;
+}
+h2 {
+  @apply font-pattaya;
 }

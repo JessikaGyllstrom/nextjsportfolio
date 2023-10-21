@@ -1,43 +1,42 @@
 import React from 'react'
-import { urlFor, sanityClient } from '../lib/sanity';
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.css"; // requires a loader
 import { loadData} from '../lib/loadData'
-
-import styles from '../styles/Carousel.module.css'
-
-export async function getStaticProps() {
-  const projects = await loadData(`*[_type == 'skills']`)
-  return { props: { projects } }
+import { Webbdev } from './api/typings.d';
+import Layouts from '../components/Layouts';
+import Projects from '../components/Projects';
+import Fieldset from '../components/Fieldset';
+import ReactPlayer from 'react-player';
+type Props = {
+  webbdev: Webbdev[];
 }
+export default function Webbdev ({ webbdev }: Props) {
 
-function Webbdev( { projects } ) {
+console.log(webbdev)
 
+  return (
+    <div className="flex justify-center min-h-[90vh]">
 
+        <div className='flex flex-col items-center'>
+                    <Fieldset sectionTitle={"Projects"} />
+        <Projects webbdev={webbdev} />
+                    <Fieldset sectionTitle={"Layouts"} />
 
-    return (
-        <div className={styles.container}>
-         <Carousel
+        {/* <h2 className="p-4 lg:text-2xl">Layouts</h2> */}
 
-         showThumbs={false}
-        showArrows={true}
-           showIndicators={true}
-          infiniteLoop={true}
-           dynamicHeight={false}
-           >
-          {projects.map((item, index) => (
-          <div key={index} className={styles.swipItem}>
-             <div className={styles.imgBox}>
-                 <img className="contain rounded-md max-h-80" alt="slides" src={urlFor(`${item.image.asset._ref}`).url()}/>
-                 <h6 className={styles.legend}>{item.title}</h6>
+        <Layouts webbdev={ webbdev }/>
 
-            </div>
+          </div>
 
             
-            </div>
-    ))}
-          </Carousel>
-        </div>
+            
+          </div>
+
+      
+
+
       );
-    } 
-export default Webbdev
+} 
+    
+export async function getStaticProps() {
+  const webbdev = await loadData(`*[_type == 'webbdev']`)
+  return { props: { webbdev } }
+}

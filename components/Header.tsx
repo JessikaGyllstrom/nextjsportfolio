@@ -2,7 +2,7 @@ import React from 'react'
 import { urlFor, sanityClient } from '../lib/sanity'
 import { useState } from "react"; // import state
 import Link  from 'next/link'
-import { PageInfo } from '../pages/typings.d';
+import { PageInfo } from '../pages/api/typings.d';
 
 type Props = {
   pageInfo: PageInfo[];
@@ -14,7 +14,7 @@ export default function Header() {
     setIsNavOpen(false)
   }
   return (
-    <header className='top-0 flex justify-between items-center max-w-5xl mx-auto pt-2 p-2 px-3 overflow-hidden'>
+    <header className='top-0 flex justify-between items-center max-w-5xl mx-auto pt-2 p-2 px-3 border-b-[0.1px] border-gray-700 overflow-hidden'>
       <div className='flex flex-row'>
         {/* {pageInfo.map((info, id) => 
           <Link href="/"><img src={urlFor(info.logoImage.asset._ref).width(40).url() } ></img></Link>
@@ -73,29 +73,14 @@ export default function Header() {
 
         <ul className="DESKTOP-MENU hidden space-x-4 lg:flex">
           <li>
-            <Link href="/"><span className='link link-underline link-underline-blue pb-1 text-sm'>Home</span></Link>
+            <Link href="/"><span className='link link-underline link-underline-blue pb-1 text-xs'>Home</span></Link>
           </li>
           <li>
-            <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-sm'>Art</span></Link>
+            <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-xs'>Art</span></Link>
           </li>
-          <li>
-            <a href="/#education"><span className='link link-underline link-underline-blue pb-1 text-sm'>Education</span></a>
-          </li> 
-          <li>
-            <a href="/#skills"><span className='link link-underline link-underline-blue pb-1 text-sm'>Skills</span></a>
-          </li> 
-          {/* <li>
-            <a href="/about"><span className='link link-underline link-underline-blue pb-1 text-sm'>About</span></a>
-          </li> */}
-          {/* <li>
-            <Link href="/webbdev"><span className='link link-underline link-underline-blue pb-1 text-sm'>Webbdev</span></Link>
-          </li> */}
-          {/* <li>
-            <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-sm'>Art</span></Link>
-          </li> */}
-          {/* <li>
-            <Link href="/#contact"><span className='link link-underline link-underline-blue pb-1 text-sm'>Contact</span></Link>
-          </li> */}
+              <li>
+            <Link href="/webbdev"><span className='link link-underline link-underline-blue pb-1 text-xs'>Webbdev</span></Link>
+          </li>
         </ul>
       </nav>
     </header>

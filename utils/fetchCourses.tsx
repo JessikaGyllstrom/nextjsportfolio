@@ -1,4 +1,4 @@
-import { Courses } from "../pages/typings.d";
+import { Courses } from "../pages/api/typings.d";
 
 export const fetchCourses = async () => {
     const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getCourses`)

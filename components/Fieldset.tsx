@@ -1,8 +1,5 @@
 import React from 'react'
 
-type Props = {
-  sectionTitle: string
-}
 
 function Fieldset({ sectionTitle }) {
   return (
