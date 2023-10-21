@@ -2,11 +2,8 @@ import React from 'react'
 import { urlFor, sanityClient } from '../lib/sanity'
 import { useState } from "react"; // import state
 import Link  from 'next/link'
-import { PageInfo } from '../pages/api/typings.d';
 
-type Props = {
-  pageInfo: PageInfo[];
-}
+
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
   const handleClick = (e, path) => {
@@ -19,7 +16,7 @@ export default function Header() {
         {/* {pageInfo.map((info, id) => 
           <Link href="/"><img src={urlFor(info.logoImage.asset._ref).width(40).url() } ></img></Link>
         )} */}
-        <Link href="/"><img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png" width={50}></img></Link>
+        {/* <Link href="/"><img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png" width={50}></img></Link> */}
 
           </div>
         <nav>
@@ -52,9 +49,9 @@ export default function Header() {
               </svg>
             </div>
             <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[200px]">
-              <li className="my-4 uppercase text-xs">
+              {/* <li className="my-4 uppercase text-xs">
                 <Link href="/" onClick={(e) => handleClick(e, "/")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Home</span></Link>
-              </li>
+              </li> */}
               {/* <li className="my-4 uppercase text-xs">
                 <a href="/about" onClick={(e) => handleClick(e, "/about")}><span className='link link-underline link-underline-blue pb-1 text-xs'>About</span></a>
               </li> */}
@@ -64,23 +61,23 @@ export default function Header() {
               {/* <li className="my-4 uppercase text-xs">
                 <Link href="/art" onClick={(e) => handleClick(e, "/art")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Art</span></Link>
               </li> */}
-              <li className="my-4 uppercase text-xs">
+              {/* <li className="my-4 uppercase text-xs">
                 <Link href="/contact" onClick={(e) => handleClick(e, "/contact")}><span className='link link-underline link-underline-blue pb-1 text-xs'>Contact</span></Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
 
         <ul className="DESKTOP-MENU hidden space-x-4 lg:flex">
-          <li>
+          {/* <li>
             <Link href="/"><span className='link link-underline link-underline-blue pb-1 text-xs'>Home</span></Link>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <Link href="/art"><span className='link link-underline link-underline-blue pb-1 text-xs'>Art</span></Link>
           </li>
               <li>
             <Link href="/webbdev"><span className='link link-underline link-underline-blue pb-1 text-xs'>Webbdev</span></Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </header>

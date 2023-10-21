@@ -7,4 +7,7 @@ export const fetchPageInfo = async () => {
     const pageInfo: PageInfo[] = data.pageInfo
 
     return pageInfo
+
+
+    
 }

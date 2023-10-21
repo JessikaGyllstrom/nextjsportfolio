@@ -13,9 +13,9 @@ const nextConfig = {
   },
   reactStrictMode: true,
 	swcMinify: true,
-	experimental: {
-    appDir: false,
-  },
+	// experimental: {
+  //   appDir: false,
+  // },
 }
 
 module.exports = {

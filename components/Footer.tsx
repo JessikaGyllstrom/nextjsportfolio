@@ -7,7 +7,7 @@ export default function Footer ({ pageInfo }) {
 
   return (
     <div className="sticky top-[100vh] border border-gray-700">
-      <div className="flex items-center justify-center mt-2">
+      {/* <div className="flex items-center justify-center mt-2">
         <div className='flex flex-col items-center w-full'> 
           {pageInfo.map((info, idx) =>
             <div key={idx} >
@@ -31,7 +31,7 @@ export default function Footer ({ pageInfo }) {
             </div>
             )}   
           </div>
-      </div> 
+      </div>  */}
     </div>
   )
 }

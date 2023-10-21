@@ -3,10 +3,10 @@ import { loadData } from '../lib/loadData';
 import { urlFor } from '../lib/sanity';
 import { Art } from './api/typings.d';
 
-type Props = {
-  art: Art[];
-}
-export default function Art({ art }: Props) {
+// type Props = {
+//   art: Art[];
+// }
+export default function Art({ art }) {
   
   return (
     <div className="mx-auto px-4 m-5">
