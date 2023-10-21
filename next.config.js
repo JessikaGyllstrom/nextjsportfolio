@@ -2,20 +2,20 @@
 
 const nextConfig = {
 	images: {
-
       remotePatterns: [
       {
         protocol: 'https',
-					  hostname: 'cdn.sanity.io',
-		  
+				hostname: 'cdn.sanity.io',
         port: '',
-	pathname: '**/images/5ivm84xc/**'      },
+				pathname: '**/images/5ivm84xc/**'
+			},
     ],
-				    // dangerouslyAllowSVG: true
-
   },
   reactStrictMode: true,
-  swcMinify: true,
+	swcMinify: true,
+	experimental: {
+    appDir: false,
+  },
 }
 
 module.exports = {
