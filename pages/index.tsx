@@ -7,30 +7,20 @@ import { fetchSkills } from '../utils/fetchSkills';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchEducations } from '../utils/fetchEducations';
 import { fetchCourses } from '../utils/fetchCourses';
-// import { fetchWebbdev } from '../utils/fetchWebbdev';
-
-
-
 import Skills from '../components/Skills';
 import { Education } from './api/typings.d';
 import Educations from '../components/Education';
 import EdImg from '../components/EdImg';
 import Fieldset from '../components/Fieldset';
-import { XaxisAnimate } from '../components/Xanimate';
 import { Course } from '../components/Course';
 import { Courses } from './api/typings.d';
-import { count } from 'console';
-import { Component } from 'react';
-import Layout from '../components/Layout';
-import { Art } from './api/typings.d';
+
 
 type Props = {
   skills: Skill[];
   pageInfo: PageInfo[];
   education: Education[];
   courses: Courses[];
-
-
 }
 
 const Home = ({ skills, education, pageInfo, courses }: Props) => {
@@ -88,19 +78,12 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   const education: Education[] = await fetchEducations()
   const courses: Courses[] = await fetchCourses()
 
-
-  // const art: Art[] = await fetchArt()
-    // const webbdev: Webbdev[] = await fetchWebbdev()
-
-  
   return {
     props: {
       skills, 
       pageInfo,
       education, 
       courses
-      // art
-      // webbdev
     },
     revalidate: 10,
   } 

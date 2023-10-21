@@ -1,13 +1,12 @@
 import { urlFor } from '../lib/sanity';
-import { Skill } from '../pages/api/typings.d';
-import Fieldset from './Fieldset';
+// import { Skill } from '../pages/api/typings.d';
 import { XaxisAnimate } from './Xanimate';
 
-type Props = {
-  skills: Skill[];
-}
+// type Props = {
+//   skills: Skill[];
+// }
 
-export default function Skills({ skills }: Props) {
+export default function Skills({ skills }) {
 
   return (
     <div id="skills" className="h-screen">
