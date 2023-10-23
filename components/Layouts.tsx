@@ -1,5 +1,5 @@
 import React from 'react'
-import Webbdev from '../pages/webbdev'
+import Webbdev from '../app/webbdev/page'
 import { urlFor } from '../lib/sanity'
 
 // type Props = {

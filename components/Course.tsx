@@ -1,7 +1,9 @@
+"use client"; // This is a client component 👈🏽
+
 import { animate, motion } from "framer-motion"
 import { title } from "process"
 import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useState } from "react"
-import { Courses } from "../pages/api/typings.d"
+import { Courses } from "../typings.d"
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IconContext } from "react-icons";
 import { BsArrowDownCircleFill } from "react-icons/bs";

@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}", 
-    "./src/**/*.{html,js}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
-
   theme: {
     extend: {
       fontFamily: {
@@ -13,6 +13,9 @@ module.exports = {
         mono: ['var(--font-roboto-mono)'],
         pattaya: ['var(--font-pattaya)'],
         swash: ['var(--font-swash)'],
+      },
+      colors: {
+        petrol: '#0f141b'
       },
       keyframes: {
         animatedgradient: {

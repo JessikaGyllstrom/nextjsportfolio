@@ -1,15 +1,13 @@
 import React from 'react'
-import { loadData } from '../lib/loadData';
-import { urlFor } from '../lib/sanity';
-import { Art } from './api/typings.d';
+import { urlFor } from '../../lib/sanity';
+import { getArt } from '../../lib/sanity.utils';
 
-// type Props = {
-//   art: Art[];
-// }
-export default function Art({ art }) {
-  
+
+export default async function Art() {
+  const art = await getArt();
+
   return (
-    <div className="mx-auto px-4 m-5">
+    <div className="mx-auto">
       <h2 className="p-4 text-center">Gallery </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
         {art.map((art, id) =>
@@ -22,8 +20,3 @@ export default function Art({ art }) {
   )
 }
 
-export async function getStaticProps() {
-  const art = await loadData(`*[_type == 'art']`)
-
-  return { props: {  art }}
-}

@@ -5,13 +5,13 @@ import {
 import imageUrlBuilder from '@sanity/image-url'
 
 const config = {
-    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
     dataset:  process.env.NEXT_PUBLIC_SANITY_DATASET || "production", 
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
     apiVersion: "2021-10-21",
     // token: process.env.NEXT_PUBLIC_UPLOADCARE_PUBLIC_KEY,
     // useCdn: true, 
     useCdn: process.env.NODE_ENV === "production",
-    ignoreBrowserTokenWarning: true
+    // ignoreBrowserTokenWarning: true
 }
 
 export const sanityClient = createClient(config)

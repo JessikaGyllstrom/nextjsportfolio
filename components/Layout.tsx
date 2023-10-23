@@ -1,8 +1,4 @@
-import Header from './Header'
-import Footer from './Footer'
 import Head from 'next/head'
-import { fetchPageInfo } from '../utils/fetchPageInfo'
-import { useEffect, useState } from 'react'
 import { Inter, Pattaya, Roboto_Mono, Rampart_One, Berkshire_Swash } from 'next/font/google';
 
 const pattaya = Pattaya({ 
@@ -35,21 +31,7 @@ const swash = Berkshire_Swash({
 })
 
 export default function Layout({ children }) {
-  
-  const [isLoading, setLoading] = useState(true)
-  const [data, setData] = useState<any[]>([])
 
-  useEffect(() => {
-    fetchPageInfo()
-    .then(values => {
-      setData(values);
-      setLoading(false)
-    })
-  }, [])
-
-  if (isLoading) return <p>Loading...</p>
-  if (!data) return <p>No data</p>
-  
   return (
     <>
       <Head>
@@ -63,9 +45,7 @@ export default function Layout({ children }) {
         <meta name="msapplication-TileColor" content="#da532c"/>
         <meta name="theme-color" content="#101010" />
       </Head>
-      <Header />  
       <main className={`${inter.variable} ${pattaya.variable}`}>{children}</main>
-      <Footer pageInfo={data} />
     </>
   )
 }

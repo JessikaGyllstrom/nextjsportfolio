@@ -1,3 +1,4 @@
+"use client"; // This is a client component 👈🏽
 import React from 'react'
 import{ Cursor, useTypewriter } from 'react-simple-typewriter'
 import { urlFor, sanityClient } from '../lib/sanity'
@@ -5,7 +6,7 @@ import { motion } from "framer-motion"
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 import { GrMail } from 'react-icons/gr'
 import { BiSolidCloudDownload } from 'react-icons/bi'
-import { PageInfo } from '../pages/api/typings.d'
+import { PageInfo } from '../typings.d'
 import Link from 'next/link'
 
 type Props = {
@@ -29,14 +30,14 @@ export default function Hero({ pageInfo }: Props) {
     <div className='flex justify-center content-center'>
       <div className='flex bg-slate-800/40 p-3 pl-3 w-[80%] md:w-[70%] lg:w-[70%] lg:px-7 md:flex-row justify-center items-center mt-10 rounded-xl md:p-5'>
         <div className='rounded-md'>
-          <div className='flex flex-col min-h-[35%] ml-3 pt-4 md:w-[95%] md:p-2 md:pt-8 pl-5'>        
+          <div className='flex flex-col min-h-[35%] ml-3 pt-4 lg:w-[100%] md:p-2 md:pt-8 pl-5'>        
             <div className='justify-center flex-initial '>
-              <h3 className='shadow-neutral-950 shadow-lg bg-gray-800 pl-2 p-2 mb-2 rounded-r-md w-[80%] md:w-[80%]'>
+              <h3 className='shadow-neutral-950 shadow-lg bg-gray-800 pl-2 p-2 mb-2 rounded-r-md w-[80%] lg:w-[90%]'>
                   Welcome to my portfolio
               </h3>
             </div>
             <div className=' px-3 py-2 rounded-md'>
-              <h2  className='font-mono pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient'>
+              <h2  className='font-mono font-semibold pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient'>
                 {" I'M JESSIKA GYLLSTRÖM"}
               </h2>
             <h5 className='text-xs md:text-sm min-h-[50px]'>- {text}</h5>

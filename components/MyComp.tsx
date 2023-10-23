@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion"
-import Animation from "../components/Animation";
+import Animation from "./Animation";
 
 import {  useInView } from "framer-motion"
 import { useEffect, useRef, useState } from "react";

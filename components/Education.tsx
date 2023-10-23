@@ -2,7 +2,7 @@ import { urlFor } from '../lib/sanity';
 import { loadData } from '../lib/loadData';
 import Image from './Image';
 import Box from './box';
-import { Education } from '../pages/api/typings.d';
+import { Education } from '../typings.d';
 import { XaxisAnimate } from './Xanimate';
 import { AnimatePresence } from "framer-motion";
 import { useAnimation, motion } from "framer-motion";
