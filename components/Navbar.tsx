@@ -15,18 +15,25 @@ export default function Navbar() {
   const currentRoute = usePathname();
 
   return (
-    <nav className="flex items-center justify-between flex-wrap p-1 px-3 border-gray-200 bg-gray-100 dark:text-white dark:bg-slate-800/40">
-      <div className="flex items-center flex-shrink-0 text-gray-800 dark:text-white mr-6">
+    <nav className="flex relative w-screen items-center justify-between flex-wrap p-1 px-3 border-gray-200 bg-gray-100 dark:text-white dark:bg-slate-800/40">
+      <div className={`flex flex-row items-center justify-between flex-shrink-0 text-gray-800 dark:text-white`}>
+        
         <div className='bg-gray-800 p-1 rounded-sm'>
-        <Link href="/">
-            <img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png" width={50}></img>
+          <Link href="/">
+              <img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png" width={50}></img>
           </Link>
         </div>
+
       </div>
+      {/* {!isOpen ? (
+        <ToggleTheme></ToggleTheme>
+      ):null
+
+      } */}
       <div className="block lg:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center px-3 py-2 rounded text-black-500 hover:text-black-400"
+          className="flex items-center py-2 rounded text-black-500 hover:text-black-400"
         >
           <svg
             className={`fill-current h-3 w-3 ${isOpen ? "hidden" : "block"}`}
@@ -48,51 +55,27 @@ export default function Navbar() {
       <div
         className={`w-full h-content items-center flex flex-col mb-5 md:mb-0 lg:flex lg:flex-row lg:w-auto ${isOpen ? "block" : "hidden"}`}
       >
+
         {menu.map((item, idx) => {   
           return (
-            <Link
+            <><Link
               href={item.path}
               key={idx}
-              className={`cursor-pointer flex text-sm font-extralight mt-4 lg:inline-block lg:mt-0 dark:text-white-200 mr-4 hover:text-teal-300 ${
-              currentRoute === item.path
-                    ? 'text-purple-500 '
-                    : 'text-white-200'
-                }`}
+              className={`cursor-pointer flex text-sm font-extralight mt-4 lg:inline-block lg:mt-0 dark:text-white-200 mr-4 hover:text-teal-300 ${currentRoute === item.path
+                  ? 'text-purple-500 '
+                  : 'text-white-200'}`}
             >
               {item.title}
-            </Link>
-            
-          //        <Link
-          //   className={isActive ? 'text-blue' : 'text-black'}
-          //   href={item.path}
-          //   key={item.title}
-          // >
-          //   {item.title}
-          // </Link>
-          // <Link key={index} href={item.path}>
-          //   <a
-          //     className={`cursor-pointer ${
-          //       router.pathn === item.path
-          //         ? 'text-blue-500'
-          //         : 'hover:bg-gray-900 hover:text-blue-500'
-          //     }`}
-          //   >
-          //     {item.title}
-          //   </a>
-          // </Link>
+            </Link></>
+
+        
         )
         })}
-        {!isOpen ? (
-          <ToggleTheme/>
-        ): null}
-      {/* <div className="text-sm w-full flex flex-col justify-center items-center lg:flex-row">
-        <Link href="/" className="flex mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4 hover:text-teal-300">Home</Link>
-        <Link href="/webbdev" className="flex mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">Webbdev</Link>
-        <Link href="/art" className="flex mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">Art</Link>
-        <Link href="/" className="flex mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">Skills</Link>
-        <Link href="/" className="flex mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4">Education</Link>
-      </div> */}
-     </div>
+        <div className={`flex ${!isOpen ? "flex" : "flex absolute top-4 right-10"}`}
+        >
+          <ToggleTheme />
+        </div>  
+      </div>
    </nav>
  );
 }

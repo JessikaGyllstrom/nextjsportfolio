@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 export function ToggleTheme() {
   const [isDark, setIsDark] = useState(true);
 
+
   function setDark() {
     document.documentElement.classList.add("dark");
     document.documentElement.classList.remove("light");
@@ -16,6 +17,8 @@ export function ToggleTheme() {
     localStorage.removeItem("theme");
     setIsDark(false);
   }
+
+
 
   function toggleMode() {
     if (isDark) {
@@ -52,7 +55,7 @@ export function ToggleTheme() {
         {isDark ? (
           <svg
             v-if="dark"
-            v-else={"dark".toString()}
+            v-else="dark"
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 fill-gray-400"
             viewBox="0 0 20 20"
@@ -63,7 +66,7 @@ export function ToggleTheme() {
           </svg>
         ) :
           <svg
-            v-else={"dark".toString()}
+            v-else="dark"
             xmlns="http://www.w3.org/2000/svg"
             className="h-4 w-4 fill-gray-400"
             viewBox="0 0 20 20"

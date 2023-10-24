@@ -5,7 +5,7 @@ export default function Layouts({ webbdev }) {
 const layouts = webbdev.filter(layout => layout.title === 'Layouts');
 
   return (
-    <div className='flex justify-center mx-8 lg:my-6'>  
+    <div className='flex justify-center mx-8 my-6'>  
       <div className="mx-auto grid grid-cols-1 md:grid-cols-1 gap-3 md:w-[70%]">
         {layouts.map((project, id) =>
           <div key={id} className='flex justify-center object-cover'>

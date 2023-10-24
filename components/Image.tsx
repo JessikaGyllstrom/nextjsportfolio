@@ -19,7 +19,7 @@ export default function Image({ id }: { id: number }) {
   return (
     <section>
       <div ref={ref}>
-        <img src={`/${id}.jpg`} alt="A London skyscraper" />
+        <img src={`/${id}.jpg`} alt="" />
       </div>
       <motion.h2 style={{ y }}>{`#${id}`}</motion.h2>
     </section>
