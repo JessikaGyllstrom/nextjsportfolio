@@ -11,7 +11,7 @@ export default function Footer({links}) {
   const [modalState, setModalState] = useState(false)
 
   return (
-    <div className="border-t min-h-full  dark:border-gray-700 dark:bg-slate-900">
+    <div className="border-t min-h-full  dark:border-gray-700 dark:bg-slate-900  dark:text-white">
       <div className="flex items-center justify-center mt-2">
         <div className='flex flex-col items-center w-full'>  
           <div className='w-full flex justify-center'>
@@ -23,21 +23,21 @@ export default function Footer({links}) {
                 />
               </Link>
             </div>
-              </div>
-              <div className='social flex flex-row justify-center pt-1 mt-3'>
-                <a href={links.github}><BsGithub size={20} className='icon mx-2 cursor-pointer transition duration-300 ease-in-out'></BsGithub></a> 
-                <a href={links.linkedIn}><BsLinkedin size={20} className='icon mx-2 cursor-pointer transition duration-300 ease-in-out'></BsLinkedin></a> 
-                <div className="cursor-pointer transition duration-300 ease-in-out" onClick={() => setModalState(true)} >
-                  <GrMail size={24} className='icon mx-2' />
-                </div>
-                <div>
-                  {modalState && <Modal setModalState={setModalState} />}
-                </div>
-              </div>
-              <div className='flex w-full dark:bg-neutral-900/30 justify-center py-1 mt-2 border-t'>
-                <p className='dark:text-gray-500 text-[0.6rem]'>&copy; 2023 Jessika Gyllström </p>
-              </div>
+          </div>
+          <div className='social flex flex-row justify-center pt-1 mt-3'>
+            <a href={links.github}><BsGithub size={20} className='icon mx-2 cursor-pointer transition duration-300 ease-in-out'></BsGithub></a> 
+            <a href={links.linkedIn}><BsLinkedin size={20} className='icon mx-2 cursor-pointer transition duration-300 ease-in-out'></BsLinkedin></a> 
+            <div className="cursor-pointer transition duration-300 ease-in-out" onClick={() => setModalState(true)} >
+              <GrMail size={24} className='icon mx-2' />
             </div>
+            <div>
+              {modalState && <Modal setModalState={setModalState} />}
+            </div>
+          </div>
+          <div className='flex w-full dark:bg-neutral-900/30 justify-center py-1 mt-2 border-t dark:border-gray-600'>
+            <p className='dark:text-gray-500 text-[0.6rem]'>&copy; 2023 Jessika Gyllström </p>
+          </div>
+        </div>
       </div>  
     </div>
   )

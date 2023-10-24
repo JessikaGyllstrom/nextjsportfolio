@@ -25,7 +25,7 @@ export function Course({ courses }) {
   const btnTitle = "Courses"
 
   return (
-    <div className="flex flex-col h-full items-center mb-5">
+    <div className="flex flex-col h-full items-center mb-5  dark:text-white">
       <motion.button className="w-[30%] flex flex-col items-center rounded-sm"
         onClick={() => setIsOpen(isOpen => !isOpen)}>{btnTitle}
         <IconContext.Provider value={{ className: "arrow" }}>
