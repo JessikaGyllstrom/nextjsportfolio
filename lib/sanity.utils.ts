@@ -43,6 +43,7 @@ export async function getArt(): Promise<Art[]> {
 export async function getWebbdev(): Promise<Webbdev[]> {
   console.log("getting webbdev")
 
-  const webbdev: Webbdev[] = await sanityClient.fetch(groq`*[_type == 'webbdev']`)
+  const webbdev: Webbdev[] = await sanityClient.fetch(groq`*[_type == 'webbdev' && rating >= 0] | order(rating) {_id, title, description, project, image, video }`)
+
   return webbdev
 }

@@ -10,7 +10,7 @@ type Props = {
 
 function EdImg({ pageInfo }) {
   return (
-    <div className='flex p-2'>         
+    <div className='flex'>         
       {pageInfo.map((info, idx) =>
         <motion.img 
           key={idx}

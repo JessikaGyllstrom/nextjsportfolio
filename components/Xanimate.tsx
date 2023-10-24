@@ -15,7 +15,7 @@ export function XaxisAnimate({
 {
     const boxVariant = {
       visible: { opacity: 1, x: 0, transition: { duration: 3 } },
-      hidden: { opacity: 0, x: -150}
+      hidden: { opacity: 0, x: -140}
 };
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -27,18 +27,16 @@ export function XaxisAnimate({
       control.start("hidden");
     }
   }, [control, inView]);
-    return (
-          <motion.div
+  
+  return (
+      <motion.div
         className="boxflex"
         ref={ref}
         variants={boxVariant}
         initial="hidden"
         animate={control}
-        
         >
-                  {children}
-
-    </motion.div>
-
+        {children}
+      </motion.div>
   );
 }

@@ -8,7 +8,7 @@ export default async function Art() {
 
   return (
     <div className="mx-auto">
-      <h2 className="p-4 text-center">Gallery </h2>
+      <h2 className="p-4 text-center dark:text-white">Gallery </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
         {art.map((art, id) =>
           <div key={id} className="flex justify-center text-6xl border-3 border-gray-300 rounded-sm p-2 bg-neutral-800">

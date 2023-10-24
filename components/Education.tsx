@@ -1,15 +1,4 @@
-import { urlFor } from '../lib/sanity';
-import { loadData } from '../lib/loadData';
-import Image from './Image';
-import Box from './box';
 import { Education } from '../typings.d';
-import { XaxisAnimate } from './Xanimate';
-import { AnimatePresence } from "framer-motion";
-import { useAnimation, motion } from "framer-motion";
-
-import {  useRef, useState } from "react";
-
-import { BsFillCloudDownloadFill, BsGithub } from 'react-icons/bs';
 
 type Props = {
     education: Education[];

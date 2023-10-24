@@ -15,26 +15,14 @@ export default async function Webbdev() {
 console.log(webbdev)
 
   return (
-    <div className="mx-auto">
-
-        <div className='flex flex-col items-center'>
-                    <Fieldset sectionTitle={"Projects"} />
+    <div className="mx-auto w-screen mt-8">
+      <h2 className="p-4 text-center dark:text-white">Projects </h2>
+      <div className='flex flex-col items-center'>
         <Projects webbdev={webbdev} />
-                    <Fieldset sectionTitle={"Layouts"} />
-
-        {/* <h2 className="p-4 lg:text-2xl">Layouts</h2> */}
-
+          <Fieldset sectionTitle={"Layouts"} />
         <Layouts webbdev={ webbdev }/>
-
-          </div>
-
-            
-            
-          </div>
-
-      
-
-
-      );
+      </div>
+    </div>
+  );
 } 
     

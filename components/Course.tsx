@@ -11,8 +11,8 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 
 const variants = {
-  open: { opacity: 1, height: "100%" },
-  closed: { opacity: 0, height: "0px" },
+  open: { opacity: 1 },
+  closed: { opacity: 0 },
 }
 
 type Props = {
@@ -25,8 +25,9 @@ export function Course({ courses }) {
   const btnTitle = "Courses"
 
   return (
-    <div className="flex flex-col items-center">
-      <motion.button className="w-[30%] flex flex-col items-center rounded-sm mb-2" onClick={() => setIsOpen(isOpen => !isOpen)}>{btnTitle}
+    <div className="flex flex-col h-full items-center mb-5">
+      <motion.button className="w-[30%] flex flex-col items-center rounded-sm"
+        onClick={() => setIsOpen(isOpen => !isOpen)}>{btnTitle}
         <IconContext.Provider value={{ className: "arrow" }}>
           <motion.div whileHover={{ y: 7, transition: { duration: 2, ease: "easeInOut", repeat: Infinity }}}>
             <TbArrowBigDownLinesFilled className=".arrow text-purple-600/70" />  
@@ -36,12 +37,12 @@ export function Course({ courses }) {
       <motion.div
         animate={isOpen ? "open" : "closed"}
         variants={variants}
-        className="border min-h-content mb-2 p-3 border-gray-700 rounded-sm bg-gray-800 bg-opacity-20"
-      >
-      {courses.map((course, idx) =>
-        <p key={idx}>- { course.title }</p>
-      )}
-    </motion.div>
-  </div>
+        className={`w-full flex flex-col border p-3 border-gray-700 rounded-sm bg-gray-800 bg-opacity-20 ${isOpen ? "flex" : "hidden"}`}
+        >
+        {courses.map((course, idx) =>
+          <p key={idx}>- { course.title }</p>
+        )}
+      </motion.div>
+    </div>
   )
 }

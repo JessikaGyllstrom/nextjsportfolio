@@ -100,6 +100,7 @@ export interface Webbdev extends SanityBody {
     title: string;
     description: string[];
     ref: string;
+    rating: string;
     image: {
         asset: {
             _id: any;

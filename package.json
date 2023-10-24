@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^2.0.0",
+    "@react-spring/parallax": "^9.7.3",
     "@react-three/fiber": "^8.13.7",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",

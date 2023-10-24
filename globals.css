@@ -18,8 +18,8 @@ html {
 }
 
 body {
-  color: #fff;
-  background-image: radial-gradient(circle, #1d1d2d 0%, #131316 100%);
+  color: #252531;
+  width: screen;
 }
 
 button {
@@ -104,6 +104,35 @@ section {
   scale: 1.1;
   transition: ease-in-out;
 }
+.modal-wrapper {
+  width: 500px;
+  height: 600px;
+}
+
+.modal {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-body {
+  padding-top: 10px;
+}
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
 .card {
   @apply bg-gray-800/30 border-[0.1px] border-slate-600 rounded-sm;
 }
@@ -112,4 +141,8 @@ section {
 }
 h2 {
   @apply font-pattaya;
+}
+@layer components {
+  .darkbg { background-image: radial-gradient(circle, #1d1d2d 0%, #131316 100%);
+  }
 }
