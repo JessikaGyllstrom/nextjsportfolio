@@ -49,7 +49,7 @@ export default async function RootLayout({
 }) {
 
   return (
-    <html lang="en">
+    <html lang="en" className='dark'>
       <body className='min-h-[100vh] flex flex-col dark:darkbg'>    
         <Navbar/>
         <main className={`${inter.variable} ${pattaya.variable}`}>{children}</main>

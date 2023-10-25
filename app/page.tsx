@@ -18,8 +18,8 @@ const education = await getEducation();
 const courses = await getCourses();
 
   return (
-     <div className=''> 
-      <div className=''>
+     <div> 
+      <div>
         <AnimateComponent>
           <div className='flex'>
             <Hero pageInfo={pageInfo} />

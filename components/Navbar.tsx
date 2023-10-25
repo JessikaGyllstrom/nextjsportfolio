@@ -15,7 +15,7 @@ export default function Navbar() {
   const currentRoute = usePathname();
 
   return (
-    <nav className="flex relative w-screen items-center justify-between flex-wrap p-1 px-3 border-gray-200 bg-gray-100 dark:text-white dark:bg-slate-800/40">
+    <nav className="flex relative w-screen items-center justify-between flex-wrap p-1 px-3 border-gray-200 bg-gray-100 dark:text-white dark:bg-slate-800/40 light:bg-pink-500">
       <div className={`flex flex-row items-center justify-between flex-shrink-0 text-gray-800 dark:text-white`}>
         
         <div className='bg-gray-800 p-1 rounded-sm'>
