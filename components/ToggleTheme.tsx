@@ -31,7 +31,7 @@ export function ToggleTheme() {
   // when the page is loaded or refreshed, check for theme preference
   useEffect(() => {
       // localStorage.theme = 'dark'
- setDark()
+    setDark()
     // if (localStorage.getItem("theme") == "dark") {
     //   setDark();
     // } else {
@@ -59,7 +59,7 @@ export function ToggleTheme() {
             v-if="dark"
             v-else="dark"
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 fill-gray-400"
+            className="h-3 w-4 fill-gray-400"
             viewBox="0 0 20 20"
             fill="currentColor"
           >
@@ -70,7 +70,7 @@ export function ToggleTheme() {
           <svg
             v-else="dark"
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 fill-gray-400"
+            className="h-3 w-4 fill-gray-400"
             viewBox="0 0 20 20"
             fill="currentColor"
           >

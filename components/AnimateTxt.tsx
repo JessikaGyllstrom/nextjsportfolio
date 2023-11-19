@@ -1,14 +1,22 @@
 "use client"; // This is a client component 👈🏽
 
-import { motion, useAnimation } from "framer-motion";
+import { motion, Variants, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useState} from "react";
 import { urlFor } from "../lib/sanity";
 import Hero from "./Hero";
 
 
+// interface Props {
+//   emoji: object;
+//   // hueA: number;
+//   // hueB: number;
+// }
 
-export function AnimateComponent({
+
+
+
+export default function AnimateL({
   children,
 }: {
   children: React.ReactNode | React.ReactNode[];
@@ -18,27 +26,34 @@ export function AnimateComponent({
     visible: { opacity: 1, transition: { duration: 3 }},
     hidden: { opacity: 0 }
 };
+
+
   const control = useAnimation();
   const [ref, inView] = useInView();
 
+  const textVariant: Variants = {
+    visible: { opacity: 1, scale: 1, transition: { duration: 2} },
+    
+    hidden: { opacity: 0, scale: 0.01 }
+  };
   useEffect(() => {
     if (inView) {
       control.start("visible");
-      console.log("visible")
-    } else {
+    }
+    else {
       control.start("hidden");
-      console.log("hidden")
     }
   }, [control, inView]);
-  return (  
-    <motion.div
-      className="box px-2 flex justify-center items-center"
+
+  return (    
+    <motion.header
       ref={ref}
-      variants={boxVariant}
       initial="hidden"
+      exit="hidden"
       animate={control}    
-      >
-        {children}
-    </motion.div>
+      variants={textVariant}
+    >
+      {children}
+    </motion.header>  
   );
 }

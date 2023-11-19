@@ -9,11 +9,8 @@ import { IconContext } from "react-icons";
 import { BsArrowDownCircleFill } from "react-icons/bs";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
+import {  Variants, useAnimation } from "framer-motion";
 
-const variants = {
-  open: { opacity: 1 },
-  closed: { opacity: 0 },
-}
 
 type Props = {
   courses: Courses[];
@@ -23,6 +20,11 @@ export function Course({ courses }) {
   
   const [isOpen, setIsOpen] = useState(false)
   const btnTitle = "Courses"
+
+  const variants: Variants = {
+    visible: { opacity: 1, transition: {   ease: "easeIn", delay: 1, duration: 2 }},
+    hidden: { opacity: 0 }
+  };
 
   return (
     <div className="flex flex-col h-full items-center mb-5  dark:text-white">
@@ -35,7 +37,6 @@ export function Course({ courses }) {
         </IconContext.Provider>
       </motion.button>
       <motion.div
-        animate={isOpen ? "open" : "closed"}
         variants={variants}
         className={`w-full flex flex-col border p-3 border-gray-700 rounded-sm bg-gray-800 bg-opacity-20 ${isOpen ? "flex" : "hidden"}`}
         >

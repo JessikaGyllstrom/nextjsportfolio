@@ -1,5 +1,5 @@
 import '../globals.css'
-import { Inter, Pattaya, Roboto_Mono, Rampart_One, Berkshire_Swash } from 'next/font/google';
+import { Inter, Pattaya, Roboto_Mono, Rampart_One, Berkshire_Swash, Chonburi} from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -28,7 +28,13 @@ const rampart = Rampart_One({
 const swash = Berkshire_Swash({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-rampart',
+  variable: '--font-swash',
+  weight: '400'
+})
+const chonburi = Chonburi({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-chonburi',
   weight: '400'
 })
 
@@ -50,9 +56,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className='dark'>
-      <body className='min-h-[100vh] flex flex-col dark:darkbg'>    
+      <body className='min-h-[100vh] w-screen flex flex-col dark:darkbg'>    
         <Navbar/>
-        <main className={`${inter.variable} ${pattaya.variable}`}>{children}</main>
+        <main className={`${inter.variable} ${pattaya.variable} ${roboto_mono.variable} ${rampart.variable} ${chonburi.variable}`}>{children}</main>
         <Footer links={links} />
       </body>
     </html>

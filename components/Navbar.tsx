@@ -17,19 +17,12 @@ export default function Navbar() {
   return (
     <nav className="flex relative w-screen items-center justify-between flex-wrap p-1 px-3 border-gray-200 bg-gray-100 dark:text-white dark:bg-slate-800/40 light:bg-pink-500">
       <div className={`flex flex-row items-center justify-between flex-shrink-0 text-gray-800 dark:text-white`}>
-        
         <div className='bg-gray-800 p-1 rounded-sm'>
           <Link href="/">
               <img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png" width={50}></img>
           </Link>
         </div>
-
       </div>
-      {/* {!isOpen ? (
-        <ToggleTheme></ToggleTheme>
-      ):null
-
-      } */}
       <div className="block lg:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -51,14 +44,12 @@ export default function Navbar() {
           </svg>
         </button>
       </div>
-
       <div
         className={`w-full h-content items-center flex flex-col mb-5 md:mb-0 lg:flex lg:flex-row lg:w-auto ${isOpen ? "block" : "hidden"}`}
       >
-
         {menu.map((item, idx) => {   
           return (
-            <><Link
+            <Link
               href={item.path}
               key={idx}
               className={`cursor-pointer flex text-sm font-extralight mt-4 lg:inline-block lg:mt-0 dark:text-white-200 mr-4 hover:text-teal-300 ${currentRoute === item.path
@@ -66,12 +57,10 @@ export default function Navbar() {
                   : 'text-white-200'}`}
             >
               {item.title}
-            </Link></>
-
-        
-        )
+            </Link>
+          )
         })}
-        <div className={`flex ${!isOpen ? "flex" : "flex absolute top-4 right-10"}`}
+        <div className={`flex ${!isOpen ? "flex" : "flex absolute top-0 right-10"}`}
         >
           <ToggleTheme />
         </div>  

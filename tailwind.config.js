@@ -14,6 +14,8 @@ module.exports = {
         mono: ['var(--font-roboto-mono)'],
         pattaya: ['var(--font-pattaya)'],
         swash: ['var(--font-swash)'],
+        rampart: ['var(--font-rampart)'],
+        chonburi: ['var(--font-chonburi)'],
       },
       colors: {
         petrol: '#0f141b'

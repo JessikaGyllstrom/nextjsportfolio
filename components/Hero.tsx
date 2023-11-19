@@ -10,6 +10,8 @@ import { PageInfo } from '../typings.d'
 import Link from 'next/link'
 import { useState } from "react";
 import Modal from './Modal';
+import  Animation   from './AnimateL';
+import AnimateL from './AnimateL';
 
 type Props = {
   pageInfo: PageInfo[];
@@ -30,54 +32,56 @@ export default function Hero({ pageInfo }: Props) {
   })
 
   return (
-    <div className='flex justify-center content-center h-screen'>
-      <div className='flex bg-slate-800/40 h-[70%] p-3 pl-3 w-[95%] md:w-[70%] lg:w-[70%] lg:px-3 md:flex-row justify-center items-center mt-10 rounded-xl md:p-2'>
-        <div className='rounded-md'>
-          <div className='flex flex-col lg:ml-3 pt-4 lg:w-[100%] md:p-2 md:pt-8 lg:pl-3'>        
-            <div className='justify-center flex-initial '>
-              <h3 className='shadow-neutral-950 shadow-lg bg-gray-800 text-white pl-2 p-2 mb-2 rounded-r-md w-[80%] lg:w-[90%]'>
-                  Welcome to my portfolio
-              </h3>
-            </div>
-            <div className=' px-3 lg:py-2 rounded-md'>
-              <h2  className='font-mono font-semibold pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient'>
-                {" I'M JESSIKA GYLLSTRÖM"}
-              </h2>
-              <h5 className='text-xs md:text-sm min-h-[50px] dark:text-white'>- {text}</h5>
-            {/* social icons */}
-            {pageInfo.map((info, idx) =>
-              <div key={idx} className='flex flex-col items-center w-[80%]'>
-                <div className='social flex flex-row justify-center items-center pt-1 mt-3 mb-2  dark:text-white'>
-                  <a href={info.githubLink}><BsGithub size={20} className='icon mx-2 transition duration-300 ease-in-out'><p>{info.githubLink}</p></BsGithub></a>
-                  <a href={info.linkedinLink}><BsLinkedin size={20} className='icon mx-2 transition duration-300 ease-in-out'></BsLinkedin></a>
-                  <div className="cursor-pointer transition duration-300 ease-in-out" onClick={() => setModalState(true)} >
-                    <GrMail size={24} className='icon mx-2' />
-                  </div>
-                  <div>
-                    {modalState && <Modal setModalState={setModalState} />}
-                  </div>
-                </div>
-                <div className='flex flex-col items-center my-2 transition duration-300 ease-in-out dark:text-white'>
-                  <p>Download CV:</p><a href={info.linkedinLink}><BiSolidCloudDownload size={28} className='icon mx-2 mt-2 '></BiSolidCloudDownload></a>
-                </div>
+    <AnimateL>
+      <div className='flex justify-center h-screen w-screen'>
+        <div className='flex bg-slate-800/40 h-[70%] p-3 pl-3 w-[95%] md:w-[70%] lg:w-[60%] md:flex-row justify-center items-center mt-10 rounded-xl md:p-2'>
+          <div className='rounded-md'>
+            <div className='flex flex-col lg:ml-3 pt-4 lg:w-[100%] md:p-2 md:pt-8 lg:pl-3'>        
+              <div className='justify-center flex-initial '>
+                <h3 className='shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[70%]'>
+                    Welcome to my portfolio
+                </h3>
               </div>
+              <div className='px-3 lg:py-2 rounded-md lg:px-1'>
+                <h3  className='font-mono font-normal pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-2xl md:mb-3'>
+                  {"I'M JESSIKA GYLLSTRÖM"}
+                </h3>
+                <h5 className='text-xs md:text-sm min-h-[50px] dark:text-white'>- {text}</h5>
+              {/* social icons */}
+              {pageInfo.map((info, idx) =>
+                <div key={idx} className='flex flex-col items-center w-[80%]'>
+                  <div className='social flex flex-row justify-center items-center pt-1 mt-3 mb-2  dark:text-white'>
+                    <a href={info.githubLink}><BsGithub size={20} className='icon mx-2 transition duration-300 ease-in-out'><p>{info.githubLink}</p></BsGithub></a>
+                    <a href={info.linkedinLink}><BsLinkedin size={20} className='icon mx-2 transition duration-300 ease-in-out'></BsLinkedin></a>
+                    <div className="cursor-pointer transition duration-300 ease-in-out" onClick={() => setModalState(true)} >
+                      <GrMail size={24} className='icon mx-2' />
+                    </div>
+                    <div>
+                      {modalState && <Modal setModalState={setModalState} />}
+                    </div>
+                  </div>
+                  <div className='flex flex-col items-center my-2 transition duration-300 ease-in-out dark:text-white'>
+                    <p>Download CV:</p><a href={info.cvLink}><BiSolidCloudDownload size={28} className='icon mx-2 mt-2 '></BiSolidCloudDownload></a>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <div className='md:w-[40%]'>
+          <div className='flex justify-center'>
+            {pageInfo.map((info, index) =>
+              <motion.img 
+                key={index}
+                src={urlFor(`${info.heroImage.asset._ref}`).url()} 
+                animate={{ y: [0, 40, 0] }}
+                transition={{ ease: 'linear', duration: 10, repeat: Infinity }}
+              />
             )}
           </div>
         </div>
       </div>
-      <div>
-        <div className='flex justify-center'>
-          {pageInfo.map((info, index) =>
-            <motion.img 
-              key={index}
-              src={urlFor(`${info.heroImage.asset._ref}`).width(800).url()} 
-              animate={{ y: [0, 40, 0] }}
-              transition={{ ease: 'linear', duration: 10, repeat: Infinity }}
-            />
-          )}
-        </div>
-      </div>
     </div>
-  </div>
+  </AnimateL>
   )
 }       

@@ -1,13 +1,12 @@
 "use client"; // This is a client component 👈🏽
-import { PageInfo } from '../typings.d'
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 import { GrMail } from 'react-icons/gr'
-import { urlFor } from '../lib/sanity'
 import Link from 'next/link';
 import { useState } from 'react';
 import Modal from './Modal';
 
-export default function Footer({links}) {
+export default function Footer({ links }) {
+  
   const [modalState, setModalState] = useState(false)
 
   return (
@@ -15,7 +14,7 @@ export default function Footer({links}) {
       <div className="flex items-center justify-center mt-2">
         <div className='flex flex-col items-center w-full'>  
           <div className='w-full flex justify-center'>
-            <div className='bg-slate-900 rounded-md p-1  hover:bg-purple-800'>
+            <div className='bg-slate-900 rounded-md p-1  hover:bg-purple-800 transition duration-300 ease-in-out'>
               <Link href="/">
                 <img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png"
                   width={50}

@@ -32,6 +32,7 @@ export interface PageInfo extends SanityBody {
     description: string[];
     githubLink: string;
     linkedinLink: string;
+    cvLink: string;
     email: string;
     links: string[];
     logoImage: {

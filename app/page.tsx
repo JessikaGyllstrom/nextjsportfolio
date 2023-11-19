@@ -1,3 +1,4 @@
+// "use client"; // This is a client component 👈🏽
 // import { getProjects } from "@/sanity/sanity-utils"
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,33 +9,40 @@ import Hero from '../components/Hero';
 import EdImg from '../components/EdImg';
 import Educations from '../components/Education';
 import { Course } from '../components/Course';
-
 import { getPageInfo, getSkills, getEducation, getCourses } from '../lib/sanity.utils';
 
+import Animation  from '../components/AnimateL';
+import { useContext } from 'react';
+import AnimateR from '../components/AnimateR';
+
+
+
 export default async function Home() {
-const skills = await getSkills();
-const pageInfo = await getPageInfo();
-const education = await getEducation();
-const courses = await getCourses();
+
+
+  const skills = await getSkills();
+  const pageInfo = await getPageInfo();
+  const education = await getEducation();
+  const courses = await getCourses();
+
+
 
   return (
-     <div> 
-      <div>
-        <AnimateComponent>
+    <div> 
+      {/* hero section */}
+      <Animation>
+        <div>
           <div className='flex'>
             <Hero pageInfo={pageInfo} />
           </div>
-        </AnimateComponent>
-      </div>
-      <AnimateComponent>
+        </div>
+        {/* skills section */}
         <div className='w-screen justify-center my-8'>
           <Fieldset sectionTitle={"Skills"} />
            <Skills skills={skills} /> 
         </div>
-      </AnimateComponent>
-      <AnimateComponent>
         {/* education section */}
-        <div className='flex w-screen justify-center items-center'>
+        <div className='flex w-screen justify-center items-center md:mb-20'>
           <div className=''>
             <Fieldset sectionTitle={"Education"} />
             <div className="flex justify-center items-center lg:my-5">
@@ -44,13 +52,13 @@ const courses = await getCourses();
                 </div>
                 <div className='flex flex-col items-center justify-center w-[100%] md:w-[50%] md:ml-4'>
                   <Educations education={education} />
-                  <Course courses={courses} />
+                    <Course courses={courses} />
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </AnimateComponent>
+      </Animation>
     </div>
   )
 
