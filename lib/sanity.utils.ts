@@ -1,5 +1,5 @@
 import { createClient, groq } from "next-sanity"
-import { Skill } from '../typings.d'
+import { About, Skill } from '../typings.d'
 import { PageInfo } from "../typings.d"
 import { Art } from '../typings.d'
 import { Education } from '../typings.d'
@@ -46,4 +46,26 @@ export async function getWebbdev(): Promise<Webbdev[]> {
   const webbdev: Webbdev[] = await sanityClient.fetch(groq`*[_type == 'webbdev' && rating >= 0] | order(rating) {_id, title, description, project, image, video }`)
 
   return webbdev
+}
+
+export async function getAbout(): Promise<About[]> {
+  console.log("getting about")
+
+
+  const about: About[] = await sanityClient.fetch(groq`
+  *[_type == 'about']{
+    bio, 
+profileImg{
+  asset {
+    _ref
+  }
+}  }
+   `)
+  
+
+
+
+  console.log(about)
+
+  return about
 }

@@ -16,9 +16,9 @@ export default async function Art() {
           <Fieldset sectionTitle={"Gallery"} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
             {art.map((art, id) =>
-              <div className="flex justify-center text-6xl border-3 border-gray-300 rounded-sm p-2 bg-neutral-800 object-cover">
+              <div key={id} className="flex justify-center text-6xl border-3 border-gray-300 rounded-sm p-2 bg-neutral-800 object-cover">
                 <AnimateR>
-                  <img className="w-full h-full rounded-sm  hover:scale-105 transition duration-500 cursor-pointer object-cover" src={urlFor(art.image.asset._ref).url()} />
+                  <img key={id} className="w-full h-full rounded-sm  hover:scale-105 transition duration-500 cursor-pointer object-cover" src={urlFor(art.image.asset._ref).url()} />
                 </AnimateR>
               </div>
             )}    

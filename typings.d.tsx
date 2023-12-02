@@ -1,3 +1,4 @@
+import { PortableTextBlock } from 'sanity';
 interface SanityBody {
     _createdAt: string;
     _id: string;
@@ -118,3 +119,17 @@ export interface Webbdev extends SanityBody {
         }
     }
 }
+export interface About extends SanityBody {
+    _type: "about";
+    name: string;
+    ref: string;
+    bio: PortableTextBlock[];
+    profileImg: {
+        asset: {
+            _id: any;
+            _ref: string;
+            _type: "reference"
+        }
+    }
+
+    }
