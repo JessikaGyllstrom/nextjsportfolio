@@ -17,11 +17,11 @@ export default async function About() {
       <div className='flex flex-col h-full mt-5'>
         <Fieldset sectionTitle={"About"}/>
         <div className='w-full flex justify-center'>
-          <div className='w-[96%] md:w-[80%] lg:w-[95%] dark:bg-slate-800/40'>
+          <div className='w-[96%] md:w-[70%] lg:w-[80%] dark:bg-slate-800/40'>
             <AnimateR>
               {about.map((data, id) =>
                 <div key={id} className="flex flex-col items-center md:flex-row">
-                  <div className='flex flex-col text-gray-50 p-4 md:p-8 lg:text-xl'>
+                  <div className='flex flex-col text-gray-50 p-4'>
                     <PortableText value={data.bio} />
                   </div>
                   <div className='w-[80%] h-full object-cover'>
