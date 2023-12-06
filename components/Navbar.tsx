@@ -61,7 +61,7 @@ export default function Navbar() {
             </Link>
           )
         })}
-        <div className={`flex ${!isOpen ? "flex" : "flex absolute top-0 right-10"}`}
+        <div className={`flex ${!isOpen ? "flex" : "flex absolute top-0 right-10 mt-4"}`}
         >
           <ToggleTheme />
         </div>  

@@ -55,16 +55,16 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
                 <SwiperSlide key={id}>
                   <div className="">
                     <img src={urlFor(hobbieImg.asset._ref).url()} className="rounded-t-lg" /> 
-                    <p className="text-gray-50 p-1 bg-purple-900/90 text-center rounded-b-lg">{title}</p>
+                    <p className="text-gray-50 p-1 bg-purple-900/90 text-center rounded-b-lg font-light">{title}</p>
                   </div>
                 </SwiperSlide>
               ))}
             </Swiper>
           </ul>
           <div className="w-screen flex justify-center flex-col items-center">
-            <MdSwipe className="text-purple-900 mt-2" />
+            <MdSwipe className="text-purple-900 mt-6" />
             <p className="text-purple-600 font-thin text-md">Swipe me out!</p>
-            <p className="text-purple-900 font-thin text-md">Art created with Firefly AI</p>
+            <p className="text-gray-400 font-thin text-md">Art created with Firefly AI</p>
           </div>
         </div>
       </AnimateR>

@@ -28,15 +28,8 @@ export function ToggleTheme() {
     }
   }
 
-  // when the page is loaded or refreshed, check for theme preference
   useEffect(() => {
-      // localStorage.theme = 'dark'
     setDark()
-    // if (localStorage.getItem("theme") == "dark") {
-    //   setDark();
-    // } else {
-    //   setLight();
-    // }
   }, []);
 
   return (

@@ -20,8 +20,8 @@ export default async function About() {
           <div className='w-[96%] md:w-[70%] lg:w-[80%] dark:bg-slate-800/40'>
             <AnimateR>
               {about.map((data, id) =>
-                <div key={id} className="flex flex-col items-center md:flex-row">
-                  <div className='flex flex-col text-gray-50 p-4'>
+                <div key={id} className="flex flex-col items-center md:flex-row md:p-8">
+                  <div className='flex flex-col text-gray-50 font-thin p-4'>
                     <PortableText value={data.bio} />
                   </div>
                   <div className='w-[80%] h-full object-cover'>

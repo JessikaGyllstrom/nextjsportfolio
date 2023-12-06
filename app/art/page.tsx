@@ -12,7 +12,7 @@ export default async function Art() {
   return (
     <AnimateComponent>
       <div className="mx-auto flex justify-center w-screen md:mb-24">
-        <div className='flex flex-col'>
+        <div className='flex flex-col mt-8'>
           <Fieldset sectionTitle={"Gallery"} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
             {art.map((art, id) =>
