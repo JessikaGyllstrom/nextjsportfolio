@@ -36,17 +36,17 @@ export default function Hero({ pageInfo }: Props) {
       <div className='flex justify-center h-screen w-screen'>
         <div className='flex bg-slate-800/40 h-[70%] p-3 pl-3 w-[95%] md:w-[70%] lg:w-[60%] md:flex-row justify-center items-center mt-10 rounded-xl md:p-2'>
           <div className='rounded-md'>
-            <div className='flex flex-col lg:ml-3 pt-4 lg:w-[100%] md:p-2 md:pt-8 lg:pl-3'>        
+            <div className='flex flex-col w-[90%] lg:ml-3 pt-4 lg:w-[100%] md:p-2 md:pt-8 lg:pl-3'>        
               <div className='justify-center flex-initial '>
                 <h3 className='text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[70%] md:text-small'>
                     Welcome to my portfolio
                 </h3>
               </div>
-              <div className='px-3 lg:py-2 rounded-md lg:px-1'>
+              <div className='lg:py-2 rounded-md lg:px-1'>
                 <h3  className='text-sm font-mono font-normal pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-2xl md:mb-3'>
                   {"I'M JESSIKA GYLLSTRÖM"}
                 </h3>
-                <h5 className='text-xs min-h-[50px] dark:text-white md:text-sm'>- {text}</h5>
+                <p className='text-[17px] min-h-[50px] dark:text-white lg:text-sm'>- {text}</p>
               {/* social icons */}
               {pageInfo.map((info, idx) =>
                 <div key={idx} className='flex flex-col items-center w-[80%]'>
@@ -68,7 +68,7 @@ export default function Hero({ pageInfo }: Props) {
             </div>
           </div>
         </div>
-        <div className='w-[60%] md:w-[40%]'>
+        <div className='w-[45%] md:w-[50%]'>
           <div className='flex justify-center'>
             {pageInfo.map((info, index) =>
               <motion.img 
