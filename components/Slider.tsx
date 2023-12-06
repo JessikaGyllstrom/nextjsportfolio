@@ -33,7 +33,7 @@ interface SliderProps {
 
 const Slider: React.FC<SliderProps> = ({ data }) => {
   return (
-    <section className="w-screen">
+    <section className="w-screen mt-5">
       <AnimateR>
         <div className="">
           <ul className="">
