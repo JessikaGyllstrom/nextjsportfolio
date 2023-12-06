@@ -131,5 +131,18 @@ export interface About extends SanityBody {
             _type: "reference"
         }
     }
-
+}
+export interface Hobbies extends SanityBody {
+    _type: "hobbies";
+    name: string;
+    id: string;
+    ref: string;
+    title: string[];
+    hobbieImg: {
+        asset: {
+            _id: any;
+            _ref: string;
+            _type: "reference"
+        }
     }
+}

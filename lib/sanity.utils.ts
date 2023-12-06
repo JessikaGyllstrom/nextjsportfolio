@@ -6,6 +6,7 @@ import { Education } from '../typings.d'
 import { Courses } from "../typings.d"
 import { Webbdev } from "../typings.d"
 import { sanityClient } from '../lib/sanity'
+import { Hobbies } from "../typings.d"
 
 export async function getPageInfo(): Promise<PageInfo[]> {
   console.log("getting pageinfo")
@@ -49,23 +50,31 @@ export async function getWebbdev(): Promise<Webbdev[]> {
 }
 
 export async function getAbout(): Promise<About[]> {
-  console.log("getting about")
 
-
-  const about: About[] = await sanityClient.fetch(groq`
-  *[_type == 'about']{
+  const about: About[] = await sanityClient.fetch(groq`*[_type == 'about']{
     bio, 
-profileImg{
-  asset {
-    _ref
-  }
-}  }
-   `)
-  
-
-
-
+    profileImg {
+      asset {
+        _ref
+      }
+    }
+  }`)
   console.log(about)
-
   return about
 }
+export async function getHobbies(): Promise<Hobbies[]> {
+
+  const hobbies: Hobbies[] = await sanityClient.fetch(groq`*[_type == 'hobbies']{
+    hobbies, 
+    id,
+    title,
+    hobbieImg {
+      asset {
+        _ref
+      }
+    }
+  }`)
+  console.log(hobbies)
+  return hobbies
+}
+

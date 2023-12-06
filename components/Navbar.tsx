@@ -6,6 +6,7 @@ import { ToggleTheme } from './ToggleTheme';
 
 const menu = [
   { title: 'home', path: '/' },
+  { title: 'about', path: '/about' },
   { title: 'art', path: '/art' },
   { title: 'webbdev', path: '/webbdev' },
 ]

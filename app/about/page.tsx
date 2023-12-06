@@ -1,7 +1,7 @@
 import React from 'react'
 import { AnimateComponent } from '../../components/AnimateComponent';
 import { urlFor } from '../../lib/sanity';
-import { getAbout, getArt } from '../../lib/sanity.utils';
+import { getAbout, getArt, getHobbies } from '../../lib/sanity.utils';
 import AnimateR from '../../components/AnimateL';
 import AnimateTxt from '../../components/AnimateTxt';
 import { PortableText } from '@portabletext/react';
@@ -10,13 +10,15 @@ import Hobbies from '../../components/Hobbies';
 
 export default async function About() {
   const about = await getAbout();
+    const hobbies = await getHobbies();
+
 
   
 
   console.log(about)
   return (
       <div className="mx-auto flex justify-center w-screen h-full md:mb-24">
-        <div className='flex flex-col'>
+        <div className='flex flex-col h-full'>
         <Fieldset sectionTitle={"About"} />
         <div className='w-full flex justify-center'>
 
@@ -25,10 +27,8 @@ export default async function About() {
         <div key={id} className="flex items-center">
   
           <div className='flex flex-col text-gray-50 p-8'>
-            <p>
               <PortableText value={data.bio}  />
 
-            </p>
 
             </div>
 
@@ -39,10 +39,11 @@ export default async function About() {
 
         </div>
             )}  
-    <Hobbies />
-          </div>
-        
+                      </div>
     </div>
+                  <Hobbies hobbies={...hobbies}/> 
+
+        
       </div>
       </div>
   )

@@ -22,7 +22,7 @@ export default function Hero({ pageInfo }: Props) {
 
   const [text] = useTypewriter({ 
       words: [
-      "Webbdeveloper", 
+      "Frontend Student", 
       "Programmer iPhone & Android", 
       "Digital Artist"
       ],
