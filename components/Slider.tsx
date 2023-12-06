@@ -55,7 +55,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
                 <SwiperSlide key={id}>
                   <div className="">
                     <img src={urlFor(hobbieImg.asset._ref).url()} className="rounded-t-lg" /> 
-                    <h1 className="text-gray-50 p-2  bg-purple-900/90 text-center rounded-b-lg">{title}</h1>
+                    <p className="text-gray-50 p-1 bg-purple-900/90 text-center rounded-b-lg">{title}</p>
                   </div>
                 </SwiperSlide>
               ))}
