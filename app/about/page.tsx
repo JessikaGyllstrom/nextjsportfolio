@@ -6,46 +6,36 @@ import AnimateR from '../../components/AnimateL';
 import AnimateTxt from '../../components/AnimateTxt';
 import { PortableText } from '@portabletext/react';
 import Fieldset from '../../components/Fieldset';
-import Hobbies from '../../components/Hobbies';
+import Slider from '../../components/Slider';
 
 export default async function About() {
   const about = await getAbout();
-    const hobbies = await getHobbies();
-
-
-  
-
+  const hobbies = await getHobbies();
   console.log(about)
   return (
-      <div className="mx-auto flex justify-center w-screen h-full md:mb-24">
-        <div className='flex flex-col h-full'>
+    <div className="mx-auto flex justify-center w-screen h-full md:mb-24">
+      <div className='flex flex-col h-full'>
         <Fieldset sectionTitle={"About"} />
         <div className='w-full flex justify-center'>
-
-      <div className='w-[80%] dark:bg-slate-800/40'>
-      {about.map((data, id) =>
-        <div key={id} className="flex items-center">
-  
-          <div className='flex flex-col text-gray-50 p-8'>
-              <PortableText value={data.bio}  />
-
-
-            </div>
-
-              <div className='w-[80%] h-full object-cover'>
-                                      <img key={id} className="rounded-sm  hover:scale-105 transition duration-500 cursor-pointer " src={urlFor(data.profileImg.asset._ref).url()} />
-
+          <div className='w-[80%] dark:bg-slate-800/40'>
+            <AnimateR>
+              {about.map((data, id) =>
+                <div key={id} className="flex items-center">
+                  <div className='flex flex-col text-gray-50 p-8'>
+                    <PortableText value={data.bio}  />
+                  </div>
+                  <div className='w-[80%] h-full object-cover'>
+                    <img key={id} className="rounded-sm  hover:scale-105 transition duration-500 cursor-pointer " src={urlFor(data.profileImg.asset._ref).url()} />
+                  </div>
+                </div>
+              )}  
+            </AnimateR>
           </div>
-
         </div>
-            )}  
-                      </div>
+        <Fieldset sectionTitle={"Hobbies"}/>
+        <Slider data={...hobbies}/>
+      </div>
     </div>
-                  <Hobbies hobbies={...hobbies}/> 
-
-        
-      </div>
-      </div>
   )
 }
 
