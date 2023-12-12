@@ -1,20 +1,7 @@
 "use client"; // This is a client component 👈🏽
-
 import { motion, Variants, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect, useState} from "react";
-import { urlFor } from "../lib/sanity";
-import Hero from "./Hero";
-
-
-// interface Props {
-//   emoji: object;
-//   // hueA: number;
-//   // hueB: number;
-// }
-
-
-
 
 export default function AnimateL({
   children,
@@ -34,12 +21,8 @@ export default function AnimateL({
   const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
 interface Props {
   emoji: string;
-  // hueA: number;
-  // hueB: number;
+
 }
-
-
-  // const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
 
   const cardVariantsL: Variants = {
     visible: { opacity: 1, x: 0, transition: { duration: 2 }},

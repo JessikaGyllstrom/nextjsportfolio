@@ -1,4 +1,4 @@
-import { createClient, groq } from "next-sanity"
+import { groq } from "next-sanity"
 import { About, Skill } from '../typings.d'
 import { PageInfo } from "../typings.d"
 import { Art } from '../typings.d'
@@ -44,7 +44,7 @@ export async function getArt(): Promise<Art[]> {
 export async function getWebbdev(): Promise<Webbdev[]> {
   console.log("getting webbdev")
 
-  const webbdev: Webbdev[] = await sanityClient.fetch(groq`*[_type == 'webbdev' && rating >= 0] | order(rating) {_id, title, description, project, image, video }`)
+  const webbdev: Webbdev[] = await sanityClient.fetch(groq`*[_type == 'webbdev' && rating >= 0] | order(rating) {_id, title, name, description, project, image, video }`)
 
   return webbdev
 }

@@ -1,16 +1,14 @@
 "use client"; // This is a client component 👈🏽
 import React from 'react'
-import{ Cursor, useTypewriter } from 'react-simple-typewriter'
-import { urlFor, sanityClient } from '../lib/sanity'
+import{ useTypewriter } from 'react-simple-typewriter'
+import { urlFor } from '../lib/sanity'
 import { motion } from "framer-motion"
 import { BsGithub, BsLinkedin, BsInstagram } from 'react-icons/bs'
 import { GrMail } from 'react-icons/gr'
 import { BiSolidCloudDownload } from 'react-icons/bi'
 import { PageInfo } from '../typings.d'
-import Link from 'next/link'
 import { useState } from "react";
 import Modal from './Modal';
-import  Animation   from './AnimateL';
 import AnimateL from './AnimateL';
 
 type Props = {
@@ -33,23 +31,23 @@ export default function Hero({ pageInfo }: Props) {
 
   return (
     <AnimateL>
-      <div className='flex justify-center h-screen w-screen'>
-        <div className='flex bg-slate-800/40 h-[70%] p-3 pl-3 w-[95%] md:w-[70%] lg:w-[60%] md:flex-row justify-center items-center mt-10 rounded-xl md:p-2'>
-          <div className='rounded-md'>
-            <div className='flex flex-col w-[90%] lg:ml-3 pt-4 lg:w-[100%] md:p-2 md:pt-8 lg:pl-3'>        
+      <div className='flex justify-center h-screen w-screen items-center'>
+        <div className='md:w-[80%] lg:w-[70%] flex mx-2 p-3 dark:bg-slate-800/40 h-[70%] md:flex-row justify-center items-center rounded-xl'>
+          <div className='w-[80%] md:w-[50%] rounded-md'>
+            <div className='flex flex-col  pt-4 md:w-[50%] lg:w-[100%] md:p-1 md:pt-8'>        
               <div className='justify-center flex-initial '>
-                <h3 className='text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[70%] md:text-small'>
+                <h3 className='text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[60%] md:text-small lg:text-lg'>
                     Welcome to my portfolio
                 </h3>
               </div>
-              <div className='lg:py-2 rounded-md lg:px-1'>
-                <h3  className='text-sm font-mono font-normal pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-2xl md:mb-3'>
+              <div className='w-[100%] lg:py-2 rounded-md lg:px-1'>
+                <h3  className='text-sm font-normal pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-md md:mb-3 md:w-[80%] lg:text-3xl'>
                   {"I'M JESSIKA GYLLSTRÖM"}
                 </h3>
-                <p className='text-[17px] min-h-[50px] dark:text-white lg:text-sm'>- {text}</p>
+                <p className='text-[14px] min-h-[50px] dark:text-white md:text-xs lg:text-lg'>- {text}</p>
               {/* social icons */}
               {pageInfo.map((info, idx) =>
-                <div key={idx} className='flex flex-col items-center w-[80%]'>
+                <div key={idx} className='flex flex-col items-center'>
                   <div className='social flex flex-row justify-center items-center pt-1 mt-3 mb-2  dark:text-white'>
                     <a href={info.githubLink}><BsGithub size={20} className='icon mx-2 transition duration-300 ease-in-out'><p>{info.githubLink}</p></BsGithub></a>
                     <a href={info.linkedinLink}><BsLinkedin size={20} className='icon mx-2 transition duration-300 ease-in-out'></BsLinkedin></a>
@@ -68,8 +66,9 @@ export default function Hero({ pageInfo }: Props) {
             </div>
           </div>
         </div>
-        <div className='w-[45%] md:w-[50%]'>
-          <div className='flex justify-center'>
+        
+          <div className='w-[70%] md:w-[40%]'>
+          <div className='flex justify-center bg-purple-700 dark:bg-slate-800/30 rounded-full'>
             {pageInfo.map((info, index) =>
               <motion.img 
                 key={index}
@@ -79,7 +78,8 @@ export default function Hero({ pageInfo }: Props) {
               />
             )}
           </div>
-        </div>
+          </div>
+          
       </div>
     </div>
   </AnimateL>

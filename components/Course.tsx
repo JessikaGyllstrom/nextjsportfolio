@@ -1,13 +1,9 @@
 "use client"; // This is a client component 👈🏽
-
-import { animate, motion } from "framer-motion"
-import { title } from "process"
-import { JSXElementConstructor, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useState } from "react"
+import { motion } from "framer-motion"
+import { useState } from "react"
 import { Courses } from "../typings.d"
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IconContext } from "react-icons";
-import { BsArrowDownCircleFill } from "react-icons/bs";
-import { IoMdArrowDropdown } from "react-icons/io";
 import { TbArrowBigDownLinesFilled } from "react-icons/tb";
 import {  Variants, useAnimation } from "framer-motion";
 
@@ -38,7 +34,7 @@ export function Course({ courses }) {
       </motion.button>
       <motion.div
         variants={variants}
-        className={`w-full flex flex-col border p-3 border-gray-700 rounded-sm bg-gray-800 bg-opacity-20 ${isOpen ? "flex" : "hidden"}`}
+        className={`w-full flex flex-col border p-3 border-gray-700 rounded-sm dark:bg-gray-800 bg-opacity-20 ${isOpen ? "flex" : "hidden"}`}
         >
         {courses.map((course, idx) =>
           <p key={idx}>- { course.title }</p>

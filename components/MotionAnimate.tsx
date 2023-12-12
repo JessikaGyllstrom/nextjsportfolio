@@ -3,16 +3,6 @@
 import { motion, Variants, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
-import { urlFor } from "../lib/sanity";
-import Hero from "./Hero";
-
-
-// interface Props {
-//   emoji: object;
-//   // hueA: number;
-//   // hueB: number;
-// }
-
 
 
 
@@ -33,12 +23,9 @@ export function MotionAnimate({
   const hue = (h: number) => `hsl(${h}, 100%, 50%)`;
 interface Props {
   emoji: string;
-  // hueA: number;
-  // hueB: number;
 }
 
 
-  // const background = `linear-gradient(306deg, ${hue(hueA)}, ${hue(hueB)})`;
 
   const cardVariants: Variants = {
     visible: { opacity: 1, x: 0, transition: { duration: 2 }},
@@ -56,25 +43,13 @@ interface Props {
 
   return (  
     <motion.div
-            ref={ref}
-
-      // className="card-container"
+      ref={ref}
       initial="hidden"
-      // whileInView="visible"
-      // viewport={{ once: true, amount: 0.8 }}
       exit="hidden"
-            animate={control}    
-variants={cardVariants}
-
+      animate={control}    
+      variants={cardVariants}
     >
-      {/* <div className="splash" style={{ background }} /> */}
-      {/* <div /> */}
-
-      {/* <motion.div className="card" variants={cardVariants}> */}
-              {/* <motion.div  variants={cardVariants}> */}
-
-        {children}
-      {/* </motion.div> */}
+      {children}
     </motion.div>
   );
 }

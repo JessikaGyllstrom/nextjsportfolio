@@ -13,19 +13,19 @@ export default async function About() {
   const hobbies = await getHobbies();
   console.log(about)
   return (
-    <div className="mx-auto flex justify-center w-screen h-full md:mb-24">
+    <div className="flex justify-center w-screen h-full text-gray-900  dark:text-gray-50">
       <div className='flex flex-col h-full mt-5'>
         <Fieldset sectionTitle={"About"}/>
         <div className='w-full flex justify-center'>
-          <div className='w-[96%] md:w-[70%] lg:w-[80%] dark:bg-slate-800/40'>
+          <div className='w-[96%] md:w-[85%] dark:bg-slate-800/40'>
             <AnimateR>
               {about.map((data, id) =>
-                <div key={id} className="flex flex-col items-center md:flex-row md:p-8">
-                  <div className='flex flex-col text-gray-50 font-thin p-4'>
+                <div key={id} className="flex flex-col w-full items-center md:flex-row md:p-4">
+                  <div className='flex md:w-[70%] flex-col line-clamp-6font-thin p-4 mt-6 mb-6 md:mt-0 md:mb-0'>
                     <PortableText value={data.bio} />
                   </div>
-                  <div className='w-[80%] h-full object-cover'>
-                    <img key={id} className="rounded-sm  hover:scale-105 transition duration-500 cursor-pointer " src={urlFor(data.profileImg.asset._ref).url()} />
+                  <div className='w-[80%] md:w-[30%] mb-5 h-full object-cover md:mb-0'>
+                    <img key={id} className="rounded-sm  hover:scale-105 transition duration-500 cursor-pointer" src={urlFor(data.profileImg.asset._ref).url()} />
                   </div>
                 </div>
               )}  

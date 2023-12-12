@@ -16,20 +16,18 @@ export default async function Webbdev() {
   console.log(webbdev)
 
   return (
-    <AnimateComponent>
-      <div className="w-screen mt-8 flex justify-center">
-        <div className='flex flex-col'>
-          <Fieldset sectionTitle={"Projects"} />
+    <div className="mx-auto flex justify-center w-screen h-full md:mb-24">
+      <div className='flex flex-col mt-5'>
+        <Fieldset sectionTitle={"Projects"} />
+        <div className='w-screen'>
           <div className='flex flex-col items-center'>
             <Projects webbdev={webbdev} />
           </div>
-          <div>
-            <Fieldset sectionTitle={"Layouts"} />
-            <Layouts webbdev={webbdev} /> 
-          </div>
+          <Fieldset sectionTitle={"Layouts"} />
+          <Layouts webbdev={webbdev} /> 
         </div>
       </div>
-    </AnimateComponent>
+    </div>
   );
 } 
     
