@@ -7,6 +7,7 @@ import { Courses } from "../typings.d"
 import { Webbdev } from "../typings.d"
 import { sanityClient } from '../lib/sanity'
 import { Hobbies } from "../typings.d"
+import { AiArt } from "../typings.d"
 
 export async function getPageInfo(): Promise<PageInfo[]> {
   console.log("getting pageinfo")
@@ -41,6 +42,14 @@ export async function getArt(): Promise<Art[]> {
   const art: Art[] = await sanityClient.fetch(groq`*[_type == 'art']`)
   return art
 }
+
+export async function getAiArt(): Promise<AiArt[]> {
+  console.log("getting aiart")
+
+  const aiart: AiArt[] = await sanityClient.fetch(groq`*[_type == 'aiart']`)
+  return aiart
+}
+
 export async function getWebbdev(): Promise<Webbdev[]> {
   console.log("getting webbdev")
 

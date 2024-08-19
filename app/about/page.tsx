@@ -34,7 +34,7 @@ export default async function About() {
         </div>
         <div className='mt-6 mb-6'>
           <Fieldset sectionTitle={"Hobbies"}/>
-          <Slider data={...hobbies}/>
+          <Slider data={hobbies}/>
         </div>
       </div>
     </div>

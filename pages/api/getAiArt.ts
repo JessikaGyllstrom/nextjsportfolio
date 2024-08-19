@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { groq } from 'next-sanity'
 import { sanityClient } from '../../lib/sanity'
-import { Art } from '../../typings.d'
+import { AiArt } from '../../typings.d'
 
-const query = groq`*[_type == 'art'] {
+const query = groq`*[_type == 'aiart'] {
   image {
     asset {
         _ref
@@ -12,14 +12,14 @@ const query = groq`*[_type == 'art'] {
 }`
 
 type Data = {
-    art: Art[]
+    aiart: AiArt[]
 }
 export default async function handler (
     req: NextApiRequest,
     res: NextApiResponse<Data>
     )
     {
-    const art: Art[] = await sanityClient.fetch(query)
-    console.log("getting art")
-    res.status(200).json({ art })
+    const aiart: AiArt[] = await sanityClient.fetch(query)
+    console.log("getting aiart")
+    res.status(200).json({ aiart })
 }

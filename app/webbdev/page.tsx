@@ -1,12 +1,9 @@
 import React from 'react'
-import { Webbdev } from '../../typings.d';
 import Layouts from '../../components/Layouts';
 import Projects from '../../components/Projects';
 import Fieldset from '../../components/Fieldset';
 import { getWebbdev } from '../../lib/sanity.utils';
 import { getPageInfo } from '../../lib/sanity.utils';
-import { AnimateComponent } from '../../components/AnimateComponent';
-import Animation from '../../components/AnimateL';
 
 export default async function Webbdev() {
   const webbdev = await getWebbdev();

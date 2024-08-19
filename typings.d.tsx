@@ -87,7 +87,20 @@ export interface Courses extends SanityBody {
 export interface Art extends SanityBody {
     _type: "art";
     title: string;
-    description: string[];
+    description: string;
+    ref: string;
+    image: {
+        asset: {
+            _id: any;
+            _ref: string;
+            _type: "reference"
+        }
+    }
+}
+export interface AiArt extends SanityBody {
+    _type: "aiart";
+    title: string;
+    description: string;
     ref: string;
     image: {
         asset: {
