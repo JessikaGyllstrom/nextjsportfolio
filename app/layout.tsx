@@ -2,6 +2,7 @@ import '../globals.css'
 import { Inter, Pattaya, Roboto_Mono, Rampart_One, Berkshire_Swash, Chonburi} from 'next/font/google';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../components/ScrollToTop';
 
 const pattaya = Pattaya({ 
   subsets: ['latin'],
@@ -59,6 +60,7 @@ export default async function RootLayout({
       <body className='min-h-[100vh] w-screen flex flex-col dark:darkbg'>    
         <Navbar/>
         <main className={`${inter.variable} ${pattaya.variable} ${roboto_mono.variable} ${rampart.variable} ${chonburi.variable}`}>{children}</main>
+        <ScrollToTop/>
         <Footer links={links} />
       </body>
     </html>

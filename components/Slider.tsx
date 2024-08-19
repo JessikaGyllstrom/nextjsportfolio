@@ -11,6 +11,7 @@ import 'swiper/css/effect-cards';
 import { EffectCoverflow } from 'swiper/modules';
 import { MdSwipe } from "react-icons/md";
 import AnimateR from "./AnimateR";
+
 interface SliderProps {
   data: Hobbies[];
 }
@@ -25,7 +26,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView={'2'}
+                slidesPerView={2}
                 coverflowEffect={{
                   rotate: 50,
                   stretch: 100,
