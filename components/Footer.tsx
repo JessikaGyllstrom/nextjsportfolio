@@ -10,11 +10,11 @@ export default function Footer({ links }) {
   const [modalState, setModalState] = useState(false)
 
   return (
-    <div className="border-t min-h-full  dark:border-gray-700 dark:bg-slate-900  dark:text-white">
+    <div className="border-t min-h-full  dark:border-gray-800/80 dark:bg-slate-900 dark:text-white">
       <div className="flex items-center justify-center mt-2">
         <div className='flex flex-col items-center w-full'>  
           <div className='w-full flex justify-center'>
-            <div className='bg-slate-900 rounded-md p-1  hover:bg-purple-800 transition duration-300 ease-in-out'>
+            <div className='bg-slate-900 rounded-md p-1 hover:bg-purple-800 transition duration-300 ease-in-out'>
               <Link href="/">
                 <img src="https://cdn.sanity.io/images/n28frzwy/production/6da30a96738dcd41323d25fb791b2ab5c09e8d43-100x100.png"
                   width={50}
@@ -33,8 +33,8 @@ export default function Footer({ links }) {
               {modalState && <Modal setModalState={setModalState} />}
             </div>
           </div>
-          <div className='flex w-full dark:bg-neutral-900/30 justify-center py-1 mt-2 border-t dark:border-gray-600'>
-            <p className='dark:text-gray-500 text-[0.6rem]'>&copy; 2023 Jessika Gyllström </p>
+          <div className='flex w-full dark:bg-neutral-900/30 justify-center py-1 mt-2 border-t dark:border-gray-800/80'>
+            <p className='dark:text-gray-500 text-[0.6rem]'>&copy; 2024 Jessika Gyllström </p>
           </div>
         </div>
       </div>  

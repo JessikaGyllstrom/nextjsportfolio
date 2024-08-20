@@ -29,7 +29,7 @@ module.exports = {
         pulse: {
           '0%, 100%':  { opacity: 15 },
           '50%': {opacity: .3 }
-        }  
+        },
       },
       backgroundSize: {
         '300%': '300%',
