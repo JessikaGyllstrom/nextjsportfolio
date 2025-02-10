@@ -33,12 +33,12 @@ function RobotModel() {
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
-    const rotation = Math.sin(time) * 0.1; // Adjust the multiplier to control the rotation range
-    const positionY = Math.sin(time * 0.1) * 0.1; // Adjust the multiplier to control the up-and-down range and speed
+    const rotation = Math.sin(time) * 0.1;
+    const positionY = Math.sin(time * 0.1) * 0.1;
     setRotationOffset(rotation);
     if (modelRef.current) {
-      modelRef.current.rotation.y = fixedRotation + rotationOffset; // Apply the fixed rotation and the rotation offset
-      modelRef.current.position.y = positionY; // Apply the up-and-down position
+      modelRef.current.rotation.y = fixedRotation + rotationOffset;
+      modelRef.current.position.y = positionY;
     }
   });
 

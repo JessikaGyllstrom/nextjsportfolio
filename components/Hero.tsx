@@ -29,7 +29,7 @@ export default function Hero({ pageInfo }: Props) {
   return (
     <AnimateL>
       <div className="flex justify-center h-screen w-screen items-center">
-        <div className="md:w-[80%] lg:w-[70%] flex mx-2 p-3 dark:bg-slate-800/40 h-[70%] md:flex-row justify-center items-center rounded-xl">
+        <div className="md:w-[80%] lg:w-[60%] flex mx-2 p-3 dark:bg-slate-800/40 h-[70%] md:flex-row justify-center items-center rounded-xl px-6 lg:px-8">
           <div className="w-[90%] md:w-[80%] rounded-md">
             <div className="flex flex-col  pt-4 md:w-[80%] lg:w-[90%] md:p-1 md:pt-8">
               <div className="justify-center flex-initial ">
