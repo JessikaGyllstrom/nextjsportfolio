@@ -20,11 +20,7 @@ export default function Hero({ pageInfo }: Props) {
   const [modalState, setModalState] = useState(false);
 
   const [text] = useTypewriter({
-    words: [
-      "Frontend Student",
-      "Programmer iPhone & Android",
-      "Digital Artist",
-    ],
+    words: ["Frontend Developer", "Programmer iPhone & Android"],
     loop: true,
     delaySpeed: 2500,
     typeSpeed: 90,
