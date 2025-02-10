@@ -15,6 +15,7 @@ export async function getPageInfo(): Promise<PageInfo[]> {
   const pageInfo: PageInfo[] = await sanityClient.fetch(groq`*[_type == 'pageinfo']`)
   return pageInfo
 }
+
 export async function getSkills(): Promise<Skill[]> {
   console.log("getting skills")
 

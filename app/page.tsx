@@ -15,17 +15,12 @@ import Animation  from '../components/AnimateL';
 import { useContext } from 'react';
 import AnimateR from '../components/AnimateR';
 
-
-
 export default async function Home() {
-
 
   const skills = await getSkills();
   const pageInfo = await getPageInfo();
   const education = await getEducation();
   const courses = await getCourses();
-
-
 
   return (
     <div> 
@@ -43,7 +38,7 @@ export default async function Home() {
         </div>
         {/* education section */}
         <div className='flex w-screen justify-center items-center md:mb-20'>
-          <div className=''>
+          <div>
             <Fieldset sectionTitle={"Education"} />
             <div className="flex justify-center items-center lg:my-5">
               <div className='flex flex-col md:flex-row justify-center items-center w-[90%] lg:w-[85%]'>
