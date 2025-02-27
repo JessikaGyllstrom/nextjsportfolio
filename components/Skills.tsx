@@ -9,11 +9,11 @@ export default function Skills({ skills }) {
     >
       <AnimateR>
         <div className="flex justify-center w-screen">
-          <div className="flex flex-col w-[70%] lg:flex-row items-center justify-center text-slate-800 dark:text-white">
+          <div className="flex flex-col w-[50%] lg:flex-row items-center justify-center text-slate-800 dark:text-white">
             {skills.map((skill, id) => (
               <div
-                key={skill._id}
-                className="h-full w-full md:w-1/4 flex flex-col mx-3 m-3 border border-gray-700 rounded-md  dark:bg-gray-800 bg-opacity-20 hover:scale-[1.02] transition ease-in-out delay-850 md:my-0"
+                key={skill}
+                className="h-full w-full md:w-1/5 flex flex-col mx-3 m-3 border border-gray-700 rounded-md  dark:bg-gray-800 bg-opacity-20 hover:scale-[1.02] transition ease-in-out delay-850 md:my-0"
               >
                 <img
                   className="h-28 first:rounded-t-md mb-2 md:h-40"

@@ -43,6 +43,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
                   <div className="flex justify-center">
                     <div className="flex flex-col">
                       <img
+                        alt="hobbie image"
                         src={urlFor(hobbieImg.asset._ref).url()}
                         className="rounded-t-lg"
                       />

@@ -28,6 +28,7 @@ export default async function About() {
                   </div>
                   <div className="w-[80%] md:w-[30%] mb-5 h-full object-cover md:mb-0">
                     <img
+                      alt="profile image"
                       className="rounded-sm  hover:scale-105 transition duration-500 cursor-pointer"
                       src={urlFor(data.profileImg.asset._ref).url()}
                     />

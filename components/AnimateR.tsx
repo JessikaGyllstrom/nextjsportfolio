@@ -2,18 +2,7 @@
 
 import { motion, Variants, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState} from "react";
-import { urlFor } from "../lib/sanity";
-import Hero from "./Hero";
-
-
-// interface Props {
-//   emoji: object;
-//   // hueA: number;
-//   // hueB: number;
-// }
-
-
+import React, { useEffect, useState} from "react";
 
 
 export default function AnimateR({

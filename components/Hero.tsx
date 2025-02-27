@@ -29,17 +29,17 @@ export default function Hero({ pageInfo }: Props) {
   return (
     <AnimateL>
       <div className="flex justify-center h-screen w-screen items-center">
-        <div className="md:w-[80%] lg:w-[60%] flex mx-2 p-3 dark:bg-slate-800/40 h-[70%] md:flex-row justify-center items-center rounded-xl px-6 lg:px-8">
-          <div className="w-[90%] md:w-[80%] rounded-md">
-            <div className="flex flex-col  pt-4 md:w-[80%] lg:w-[90%] md:p-1 md:pt-8">
+        <div className="w-[95%] md:w-[80%] xl:w-[60%] flex mx-8 p-3 dark:bg-slate-800/40 lg:h-[70%] md:flex-row justify-center items-center rounded-xl">
+          <div className="w-[90%] md:w-[80%] rounded-md px-6">
+            <div className="flex flex-col pt-4 w-[100%] lg:w-[95%] md:p-1 md:pt-6">
               <div className="justify-center flex-initial ">
                 <h3 className="text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[60%] md:text-small lg:text-lg">
                   Welcome to my portfolio
                 </h3>
               </div>
 
-              <div className="w-[100%] lg:py-2 rounded-md lg:px-1">
-                <h3 className="text-sm font-normal pt-3 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-md md:mb-3 md:w-[80%] lg:text-3xl">
+              <div className="lg:py-2 rounded-md">
+                <h3 className="text-sm font-normal pt-3 pb-2 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-md md:mb-3 md:w-[80%] lg:text-2xl">
                   {"I'M JESSIKA GYLLSTRÖM"}
                 </h3>
                 <p className="text-[14px] min-h-[50px] dark:text-white md:text-xs lg:text-lg">
@@ -88,8 +88,8 @@ export default function Hero({ pageInfo }: Props) {
             </div>
           </div>
 
-          <div className="w-[70%] md:w-[40%]">
-            <div className="flex justify-center bg-purple-700 dark:bg-slate-800/30 rounded-full h-32 w-32 lg:w-56 lg:h-56">
+          <div className="w-[50%] px-2">
+            <div className="flex justify-center bg-purple-700 dark:bg-slate-800/30 rounded-full w-32 h-32 lg:w-64 lg:h-64">
               {pageInfo.map((info, index) => (
                 // <motion.img
                 //   key={index}
