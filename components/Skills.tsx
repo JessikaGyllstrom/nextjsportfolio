@@ -8,8 +8,8 @@ export default function Skills({ skills }) {
       className="flex justify-center w-screen items-center md:my-12"
     >
       <AnimateR>
-        <div className="flex justify-center w-screen bg-purple-500">
-          <div className="bg-pink-400 flex flex-col w-full md:flex-row items-center justify-center text-slate-800 dark:text-white">
+        <div className="flex justify-center w-screen">
+          <div className="flex flex-col w-full md:flex-row items-center justify-center text-slate-800 dark:text-white">
             {skills.map((skill, id) => (
               <div
                 key={skill}
