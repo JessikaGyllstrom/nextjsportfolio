@@ -73,7 +73,7 @@ export default function Hero({ pageInfo }: Props) {
                         {modalState && <Modal setModalState={setModalState} />}
                       </div>
                     </div>
-                    <div className="flex flex-col items-center my-2 transition duration-300 ease-in-out dark:text-white">
+                    {/* <div className="flex flex-col items-center my-2 transition duration-300 ease-in-out dark:text-white">
                       <p>Download CV:</p>
                       <a href={info.cvLink}>
                         <BiSolidCloudDownload
@@ -81,7 +81,7 @@ export default function Hero({ pageInfo }: Props) {
                           className="icon mx-2 mt-2 "
                         ></BiSolidCloudDownload>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 ))}
               </div>
