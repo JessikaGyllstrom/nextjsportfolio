@@ -47,7 +47,7 @@ const Slider: React.FC<SliderProps> = ({ data }) => {
                         src={urlFor(hobbieImg.asset._ref).url()}
                         className="rounded-t-lg"
                       />
-                      <p className="text-gray-50 p-1 bg-purple-900/90 py-2 text-center rounded-b-lg font-light">
+                      <p className="text-gray-50 py-4 bg-purple-900/90 text-center rounded-b-lg font-light shadow-lg ">
                         {title}
                       </p>
                     </div>

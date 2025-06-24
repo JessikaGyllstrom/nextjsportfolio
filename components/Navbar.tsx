@@ -8,7 +8,8 @@ const menu = [
   { title: "home", path: "/" },
   { title: "about", path: "/about" },
   { title: "art", path: "/art" },
-  { title: "webbdev", path: "/webbdev" },
+  { title: "projects", path: "/projects" },
+  { title: "design", path: "/design" },
 ];
 
 export default function Navbar() {
