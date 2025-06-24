@@ -31,7 +31,7 @@ export default function Hero({ pageInfo }: Props) {
       <div className="flex justify-center h-screen w-screen items-center">
         <div className="w-[95%] md:w-[80%] xl:w-[60%] flex mx-8 p-3 dark:bg-slate-800/40 lg:h-[70%] md:flex-row justify-center items-center rounded-xl">
           <div className="w-[90%] md:w-[80%] rounded-md px-6">
-            <div className="flex flex-col pt-4 w-[100%] lg:w-[95%] md:p-1 md:pt-6">
+            <div className="flex flex-col pt-4 w-[90%] lg:w-[95%] md:p-1 md:pt-6">
               <div className="justify-center flex-initial ">
                 <h3 className="text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[60%] md:text-small lg:text-lg">
                   Welcome to my portfolio
