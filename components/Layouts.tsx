@@ -6,7 +6,7 @@ export default function Layouts({ layout }) {
   const layouts = layout.filter((layout) => layout.title === "Layouts");
 
   return (
-    <div className="flex justify-center my-2 w-screen md:mb-24">
+    <div className="flex justify-center my-4 w-screen mb-8">
       <div className="w-[90%] grid grid-cols-1 gap-3 md:w-[40%]">
         {layouts.map((project, id) => (
           <div key={id} className="flex justify-center object-cover">

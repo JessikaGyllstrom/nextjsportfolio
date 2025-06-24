@@ -17,15 +17,15 @@ export default async function Design() {
 
   return (
     <div className="mx-auto flex justify-center w-screen h-full md:mb-24">
-      <div className="flex flex-col mt-1 mx-6">
+      <div className="flex flex-col my-8 mx-6">
         <Fieldset sectionTitle={"Design"} />
-        <div className="flex items-center w-full justify-center">
+        <div className="flex items-center w-full justify-center mb-6">
           <div className="md:w-2/3 lg:w-1/2">
             {design[0].video?.asset?._ref ? (
               <Player url={getUrlFromId(design[0].video.asset._ref)} />
             ) : design[0].video?.asset?.url ? (
               <>
-                <h3 className="text-gray-100 text-center pb-4 text-sm md:text-lg">
+                <h3 className="text-gray-100 text-center py-4 px-2 text-sm">
                   {design[0].title}
                 </h3>
                 <Player url={design[0].video.asset.url} />
@@ -43,25 +43,22 @@ export default async function Design() {
         <Fieldset sectionTitle={"Layouts"} />
         <Layouts layout={layout} />
         <Fieldset sectionTitle={"Storyboards"} />
-        <div className="flex flex-col mx-auto w-full">
+        <div className="flex flex-col mx-auto w-full items-center">
           <div className="max-w-md px-4 items-center">
             {storyboard.map((storyboard) => (
-              <div key={storyboard._id} className="mb-2 w-full">
+              <div key={storyboard._id}>
                 <Storyboard key={storyboard._id} storyboard={storyboard} />
                 {storyboard.images &&
                   storyboard.images
                     .sort((a, b) => b.rating - a.rating)
                     .map((image, index) => (
-                      <div
-                        key={index}
-                        className="flex flex-col items-center mt-2"
-                      >
+                      <div key={index} className="flex flex-col items-center">
                         <img
                           src={image.image.asset.url}
                           alt={image.description || "Storyboard Image"}
                           className=" w-full max-w-md h-auto object-cover"
                         />
-                        <p className=" text-gray-50 text-center mt-2">
+                        <p className=" text-gray-50 text-center my-2">
                           {image.description || "No description provided"}
                         </p>
                       </div>
