@@ -16,7 +16,7 @@ function EdImg({ pageInfo }) {
         {pageInfo.map((info, idx) => (
           <img
             key={idx}
-            alt={info.educationImage.alt}
+            alt={"Learning Image"}
             src={urlFor(`${info.educationImage.asset._ref}`).url()}
             className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#5c2c7a] from-20%  via-[#75408a] via-20%  to-transparent to-70%"
           />

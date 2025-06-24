@@ -42,7 +42,7 @@ export default async function Art() {
                 <AnimateR>
                   <img
                     key={id}
-                    alt={aiart.description}
+                    alt={aiart.title}
                     className="w-full h-full rounded-sm  hover:scale-105 transition duration-500 cursor-pointer object-cover"
                     src={urlFor(aiart.image.asset._ref).url()}
                   />

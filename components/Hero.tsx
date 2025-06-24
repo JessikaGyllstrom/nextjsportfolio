@@ -33,15 +33,15 @@ export default function Hero({ pageInfo }: Props) {
           <div className="w-[90%] md:w-[80%] rounded-md px-6">
             <div className="flex flex-col pt-4 w-[90%] lg:w-[95%] md:p-1 md:pt-6">
               <div className="justify-center flex-initial ">
-                <h3 className="text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[60%] md:text-small lg:text-lg">
+                <h1 className="text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[60%] md:text-small lg:text-lg">
                   Welcome to my portfolio
-                </h3>
+                </h1>
               </div>
 
               <div className="lg:py-2 rounded-md">
-                <h3 className="text-sm font-normal pt-3 pb-2 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-md md:mb-3 md:w-[80%] lg:text-2xl">
+                <h2 className="text-sm font-normal pt-3 pb-2 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-md md:mb-3 md:w-[80%] lg:text-2xl">
                   {"I'M JESSIKA GYLLSTRÖM"}
-                </h3>
+                </h2>
                 <p className="text-[14px] min-h-[50px] dark:text-white md:text-xs lg:text-lg">
                   - {text}
                 </p>
@@ -49,7 +49,12 @@ export default function Hero({ pageInfo }: Props) {
                 {pageInfo.map((info, idx) => (
                   <div key={idx} className="flex flex-col items-center">
                     <div className="social flex flex-row justify-center items-center pt-1 mt-3 mb-2  dark:text-white">
-                      <a href={info.githubLink}>
+                      <a
+                        href={info.githubLink}
+                        aria-label="Visit my GitHub profile"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <BsGithub
                           size={20}
                           className="icon mx-2 transition duration-300 ease-in-out"
@@ -57,7 +62,12 @@ export default function Hero({ pageInfo }: Props) {
                           <p>{info.githubLink}</p>
                         </BsGithub>
                       </a>
-                      <a href={info.linkedinLink}>
+                      <a
+                        href={info.linkedinLink}
+                        aria-label="Visit my LinkedIn profile"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <BsLinkedin
                           size={20}
                           className="icon mx-2 transition duration-300 ease-in-out"
@@ -67,7 +77,12 @@ export default function Hero({ pageInfo }: Props) {
                         className="cursor-pointer transition duration-300 ease-in-out"
                         onClick={() => setModalState(true)}
                       >
-                        <GrMail size={24} className="icon mx-2" />
+                        <GrMail
+                          size={24}
+                          className="icon mx-2"
+                          aria-label="Contact me"
+                          target="_blank"
+                        />
                       </div>
                       <div>
                         {modalState && <Modal setModalState={setModalState} />}
