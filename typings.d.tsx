@@ -210,6 +210,7 @@ interface Category extends SanityBody {
 interface DesignImage {
   _type: "image";
   asset: {
+    url: string | undefined;
     _id: string;
     _ref: string;
     _type: "reference";

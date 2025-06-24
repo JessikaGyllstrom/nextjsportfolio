@@ -14,6 +14,7 @@ export default async function Design() {
   const storyboard = await getStoryboards();
   const design = await getDesigns();
   const layout = await getProjects();
+  console.log("URL" + design[1]);
 
   return (
     <div className="mx-auto flex justify-center w-screen h-full md:mb-24">
@@ -29,15 +30,25 @@ export default async function Design() {
                   {design[0].title}
                 </h3>
                 <Player url={design[0].video.asset.url} />
-                <p className="text-gray-50 text-xs py-4 px-4">
+                <p className="text-gray-50 text-xs py-4 px-4 text-center">
                   {design[0].name}
                 </p>
               </>
             ) : (
-              <p className="text-gray-50">
-                No video available: {design[0].title}
-              </p>
+              <p className="text-gray-50">No video available</p>
             )}
+
+            <div className="border-t border-gray-700 w-full my-4">
+              <h3 className="text-gray-100 text-center py-4 px-2 text-sm">
+                {design[1].title}
+              </h3>
+              <p className="text-gray-50 text-center mb-4">{design[1].name}</p>
+              <img
+                src={design[1].image?.asset?.url}
+                alt={design[1].title}
+                className="w-full h-auto object-cover rounded-sm"
+              />
+            </div>
           </div>
         </div>
         <Fieldset sectionTitle={"Layouts"} />
