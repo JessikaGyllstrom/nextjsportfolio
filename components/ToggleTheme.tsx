@@ -1,80 +1,76 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 export function ToggleTheme() {
-  const [isDark, setIsDark] = useState(true);
+  const [theme, setTheme] = useState("dark"); // Default theme is dark
 
-  function setDark() {
-    document.documentElement.classList.add("dark");
-    document.documentElement.classList.remove("light");
-    localStorage.setItem("theme", "dark");
-    setIsDark(true);
-  }
-
-  function setLight() {
-    document.documentElement.classList.add("light");
-    document.documentElement.classList.remove("dark");
-    localStorage.removeItem("theme");
-    setIsDark(false);
-  }
-
-  function toggleMode() {
-    if (isDark) {
-      setLight();
-    } else {
-      setDark();
-    }
-  }
-
+  // Update the DOM class when the theme changes
   useEffect(() => {
-    setDark();
-  }, []);
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+      document.documentElement.classList.remove("light");
+    } else {
+      document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  // Toggle the theme
+  const toggleTheme = () => {
+    console.log("Toggling theme");
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
 
   return (
-    <>
+    <div className="flex flex-col justify-center ml-3">
+      <input
+        type="checkbox"
+        name="custom-light-switch"
+        className="light-switch sr-only"
+      />
       <label
-        htmlFor="theme-toggle"
-        className="relative block w-7 h-3"
-        aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+        className="relative cursor-pointer p-2"
+        htmlFor="custom-light-switch"
+        onClick={toggleTheme} // Attach the onClick event here
       >
-        {" "}
-        <input
-          onChange={toggleMode}
-          type="checkbox"
-          checked={isDark ? true : false}
-          className="peer opacity-0"
-        />
-        <div className="absolute cursor-pointer left-0 top-0 bottom-0 right-0 bg-gray-400 rounded-3xl before:absolute before:w-3 before:h-3 before:rounded-full before:bg-gray-500 peer-checked:before:translate-x-3 peer-checked:before:bg-gray-600 before:transition-all duration-300 mr-1"></div>
-      </label>
-      <button
-        aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      >
-        {isDark ? (
+        {/* Light Mode SVG */}
+        {theme === "light" && (
           <svg
-            v-if="dark"
-            v-else="dark"
+            className="dark:hidden"
+            width="16"
+            height="16"
             xmlns="http://www.w3.org/2000/svg"
-            className="h-3 w-4 fill-gray-400"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-          >
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-          </svg>
-        ) : (
-          <svg
-            v-else="dark"
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-3 w-4 fill-gray-400"
-            viewBox="0 0 20 20"
-            fill="currentColor"
           >
             <path
-              fillRule="evenodd"
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-              clipRule="evenodd"
+              className="fill-slate-300"
+              d="M7 0h2v2H7zM12.88 1.637l1.414 1.415-1.415 1.413-1.413-1.414zM14 7h2v2h-2zM12.95 14.433l-1.414-1.413 1.413-1.415 1.415 1.414zM7 14h2v2H7zM2.98 14.364l-1.413-1.415 1.414-1.414 1.414 1.415zM0 7h2v2H0zM3.05 1.706 4.463 3.12 3.05 4.535 1.636 3.12z"
+            />
+            <path
+              className="fill-slate-400"
+              d="M8 4C5.8 4 4 5.8 4 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4Z"
             />
           </svg>
         )}
-      </button>
-    </>
+
+        {/* Dark Mode SVG */}
+        {theme === "dark" && (
+          <svg
+            className="hidden dark:block"
+            width="16"
+            height="16"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              className="fill-slate-400"
+              d="M6.2 1C3.2 1.8 1 4.6 1 7.9 1 11.8 4.2 15 8.1 15c3.3 0 6-2.2 6.9-5.2C9.7 11.2 4.8 6.3 6.2 1Z"
+            />
+            <path
+              className="fill-slate-500"
+              d="M12.5 5a.625.625 0 0 1-.625-.625 1.252 1.252 0 0 0-1.25-1.25.625.625 0 1 1 0-1.25 1.252 1.252 0 0 0 1.25-1.25.625.625 0 1 1 1.25 0c.001.69.56 1.249 1.25 1.25a.625.625 0 1 1 0 1.25c-.69.001-1.249.56-1.25 1.25A.625.625 0 0 1 12.5 5Z"
+            />
+          </svg>
+        )}
+        <span className="sr-only">Switch to light / dark version</span>
+      </label>
+    </div>
   );
 }

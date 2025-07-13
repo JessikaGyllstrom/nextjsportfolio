@@ -16,7 +16,6 @@ export default async function Design() {
   const storyboard = await getStoryboards();
   const design = await getDesigns();
   const layout = await getProjects();
-  console.log("URL" + design[1]);
 
   return (
     <div className="mx-auto flex justify-center w-screen h-full md:mb-24">

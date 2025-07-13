@@ -17,11 +17,13 @@ export default function Projects({ project }) {
                 key={id}
                 className="flex w-screen justify-center items-center"
               >
-                <div className="mb-5 border border-gray-700 dark:border-none dark:bg-slate-800/40 flex md:w-[65%] flex-col md:flex-row hover:scale-105 transition duration-500 cursor-pointer">
-                  <div className="md:w-[70%]">
+                <div className="mb-5 border border-gray-600/80 dark:bg-slate-800/40 flex md:w-[65%] flex-col hover:scale-105 transition duration-500 cursor-pointer">
+                  {/* Video Section */}
+                  <div className="w-full">
                     <Player url={getUrlFromId(project.video.asset._ref)} />
                   </div>
-                  <div className="flex md:w-[30%] flex-col justify-center my-3 md:ml-3 px-2">
+                  {/* Text Section */}
+                  <div className="flex w-full flex-col justify-center my-4 px-46 py-4 ">
                     <h5 className="mb-2 font-normal text-xs md:text-sm text-center">
                       {project.name}
                     </h5>

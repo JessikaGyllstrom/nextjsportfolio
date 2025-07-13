@@ -13,7 +13,7 @@ export default function Skills({ skills }) {
             {skills.map((skill, id) => (
               <div
                 key={id}
-                className="h-full flex flex-col w-1/2 lg:w-1/5 mx-1 m-1 lg:mx-4 border border-gray-700 rounded-md  dark:bg-gray-800 bg-opacity-20 hover:scale-[1.02] transition ease-in-out delay-850 "
+                className="h-full flex flex-col w-[70%] my-2 lg:w-1/5 mx-1 py2 lg:mx-4 border border-gray-700 rounded-md  dark:bg-gray-800 bg-opacity-20 hover:scale-[1.02] transition ease-in-out delay-850 "
               >
                 <img
                   className="h-28 first:rounded-t-md mb-2 md:h-40"

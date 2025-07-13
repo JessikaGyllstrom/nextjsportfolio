@@ -29,20 +29,23 @@ export default function Hero({ pageInfo }: Props) {
   return (
     <AnimateL>
       <div className="flex justify-center h-screen w-screen items-center">
-        <div className="w-[95%] md:w-[80%] xl:w-[60%] flex mx-8 p-3 dark:bg-slate-800/40 lg:h-[70%] md:flex-row justify-center items-center rounded-xl">
-          <div className="w-[90%] md:w-[80%] rounded-md px-6">
-            <div className="flex flex-col pt-4 w-[90%] lg:w-[95%] md:p-1 md:pt-6">
-              <div className="justify-center flex-initial ">
-                <h1 className="text-xs shadow-neutral-950 shadow-lg text-white pl-2 p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[60%] md:text-small lg:text-lg">
+        <div className=" w-full xl:w-[60%] flex flex-col mx-4 p-3 dark:bg-slate-800/40 lg:h-[70%] md:flex-row justify-center items-center rounded-xl">
+          <div className="w-full flex justify-center md:w-[80%] rounded-md p-1 md:px-4">
+            <div className="flex flex-col pt-4 w-full lg:w-[95%] md:p-1 md:pt-6">
+              <div className="w-full justify-center flex-initial ">
+                <h1 className="text-sm shadow-neutral-950 shadow-lg text-white p-2 mb-2 rounded-r-md  bg-gradient-to-r from-purple-900  to-purple-700  w-[80%] md:w-[60%] lg:text-lg">
                   Welcome to my portfolio
                 </h1>
               </div>
 
-              <div className="lg:py-2 rounded-md">
-                <h2 className="text-sm font-normal pt-3 pb-2 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-md md:mb-3 md:w-[80%] lg:text-2xl">
+              <div className="flex flex-col w-full lg:py-2 rounded-md">
+                <h2
+                  className="text-2xl
+                 font-extrabold pt-3 pb-2 bg-gradient-to-r from-purple-700 via-pink-500 to-pink-400 text-transparent bg-clip-text bg-300% animate-gradient md:text-md md:mb-3 md:w-[80%] lg:text-2xl"
+                >
                   {"I'M JESSIKA GYLLSTRÖM"}
                 </h2>
-                <p className="text-[14px] min-h-[50px] dark:text-white md:text-xs lg:text-lg">
+                <p className="text-sm min-h-12 dark:text-white md:text-xs lg:text-lg">
                   - {text}
                 </p>
                 {/* social icons */}
@@ -88,22 +91,13 @@ export default function Hero({ pageInfo }: Props) {
                         {modalState && <Modal setModalState={setModalState} />}
                       </div>
                     </div>
-                    {/* <div className="flex flex-col items-center my-2 transition duration-300 ease-in-out dark:text-white">
-                      <p>Download CV:</p>
-                      <a href={info.cvLink}>
-                        <BiSolidCloudDownload
-                          size={28}
-                          className="icon mx-2 mt-2 "
-                        ></BiSolidCloudDownload>
-                      </a>
-                    </div> */}
                   </div>
                 ))}
               </div>
             </div>
           </div>
 
-          <div className="w-[50%] px-2">
+          <div className="flex justify-center w-full lg:w-[50%] p-2">
             <div className="flex justify-center bg-purple-700 dark:bg-slate-800/30 rounded-full w-32 h-32 lg:w-64 lg:h-64">
               {pageInfo.map((info, index) => (
                 // <motion.img

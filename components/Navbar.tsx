@@ -31,6 +31,7 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
+      {/* Hamburger menu for mobile view */}
       <div className="block lg:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -74,7 +75,7 @@ export default function Navbar() {
         })}
         <div
           className={`flex ${
-            !isOpen ? "flex" : "flex absolute top-0 right-12 mt-4"
+            !isOpen ? "flex" : "flex absolute top-0 right-8 mt-4"
           }`}
         >
           <ToggleTheme />
