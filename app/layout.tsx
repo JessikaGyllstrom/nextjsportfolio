@@ -1,4 +1,6 @@
 import "../globals.css";
+import { Analytics } from "@vercel/analytics/next";
+
 import {
   Inter,
   Pattaya,
@@ -64,6 +66,7 @@ export default async function RootLayout({
           className={`${inter.variable} ${pattaya.variable} ${roboto_mono.variable} ${rampart.variable} ${chonburi.variable}`}
         >
           {children}
+          <Analytics />
         </main>
         <ScrollToTop />
         <Footer links={metadata} />
