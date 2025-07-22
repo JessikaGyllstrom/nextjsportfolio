@@ -1,5 +1,5 @@
 import { groq } from "next-sanity";
-import { About, Skill } from "../typings.d";
+import { About, Illustrations, Skill } from "../typings.d";
 import { PageInfo } from "../typings.d";
 import { Art } from "../typings.d";
 import { Education } from "../typings.d";
@@ -13,7 +13,7 @@ import { Design } from "../typings.d";
 
 export async function getPageInfo(): Promise<PageInfo[]> {
   const pageInfo: PageInfo[] = await sanityClient.fetch(
-    groq`*[_type == 'pageinfo']`,
+    groq`*[_type == 'pageinfo']`
   );
   return pageInfo;
 }
@@ -24,7 +24,7 @@ export async function getSkills(): Promise<Skill[]> {
 }
 export async function getEducation(): Promise<Education[]> {
   const education: Education[] = await sanityClient.fetch(
-    groq`*[_type == 'education']`,
+    groq`*[_type == 'education']`
   );
   return education;
 }
@@ -40,7 +40,13 @@ export async function getArt(): Promise<Art[]> {
   const art: Art[] = await sanityClient.fetch(groq`*[_type == 'art']`);
   return art;
 }
-
+export async function getIllustrations(): Promise<Illustrations[]> {
+  const illustrations: Illustrations[] = await sanityClient.fetch(groq`
+    *[_type == 'illustrations']
+       
+  `);
+  return illustrations;
+}
 export async function getAiArt(): Promise<AiArt[]> {
   const aiart: AiArt[] = await sanityClient.fetch(groq`*[_type == 'aiart']`);
   return aiart;
@@ -48,7 +54,7 @@ export async function getAiArt(): Promise<AiArt[]> {
 
 export async function getProjects(): Promise<Project[]> {
   const project: Project[] = await sanityClient.fetch(
-    groq`*[_type == 'webbdev' && rating >= 0] | order(rating) {_id, title, name, description, project, image, video }`,
+    groq`*[_type == 'webbdev' && rating >= 0] | order(rating) {_id, title, name, description, project, image, video }`
   );
   return project;
 }

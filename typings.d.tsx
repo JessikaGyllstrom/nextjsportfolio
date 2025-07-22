@@ -97,6 +97,19 @@ export interface Art extends SanityBody {
     };
   };
 }
+export interface Illustrations extends SanityBody {
+  _type: "illustrations";
+  title: string;
+  description: string;
+  ref: string;
+  image: {
+    asset: {
+      _id: any;
+      _ref: string;
+      _type: "reference";
+    };
+  };
+}
 export interface AiArt extends SanityBody {
   _type: "aiart";
   title: string;

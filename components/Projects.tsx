@@ -10,7 +10,7 @@ export default function Projects({ project }) {
   return (
     <AnimateComponent>
       <div className="w-screen justify-center flex mb-8">
-        <div className="w-screen flex flex-col items-center justify-center p-2 py-2 text-gray-950 dark:text-gray-100">
+        <div className="w-screen flex flex-col items-center justify-center p-2 py-2 dark:text-gray-50">
           {projects.map((project, id) => (
             <AnimationR key={id}>
               <div

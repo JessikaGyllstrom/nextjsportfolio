@@ -16,7 +16,7 @@ export default function Skills({ skills }) {
                 className="h-full flex flex-col w-[70%] my-2 lg:w-1/5 mx-1 py2 lg:mx-4 border border-gray-700 rounded-md  dark:bg-gray-800 bg-opacity-20 hover:scale-[1.02] transition ease-in-out delay-850 "
               >
                 <img
-                  className="h-28 first:rounded-t-md mb-2 md:h-40"
+                  className="h-40 first:rounded-t-md mb-2 md:h-44"
                   src={urlFor(`${skill.skillsImage.asset._ref}`).url()}
                   alt={skill.title}
                 />
